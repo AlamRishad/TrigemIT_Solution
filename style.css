@@ -1,0 +1,224 @@
+/* Style.css */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8f8f8;
+  padding: 10px 30px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+}
+.navbar a.active {
+  color: #ff850a;
+}
+
+.logo {
+  font-size: 24px;
+  color: #003366;
+}
+
+.tagline {
+  display: block;
+  font-size: 12px;
+  color: #777;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+.navbar a,
+.dropdown .dropbtn {
+  text-decoration: none;
+  color: #333;
+  margin: 0 10px;
+  font-size: 14px;
+  padding: 17px 0;
+  position: relative;
+  display: inline-block;
+}
+.dropbtn:after {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 5px;
+  vertical-align: middle;
+  border-top: 5px solid;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+}
+.dropbtn2:after {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 5px;
+  vertical-align: middle;
+  border-top: 5px solid;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+}
+.dropdown {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.dropdown-content {
+  margin-top: 53px;
+  padding-top: 0.5vw;
+
+  padding-bottom: 0.5vw;
+  margin-left: 15vw;
+  display: none;
+  position: absolute;
+  background-color: white;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  white-space: nowrap;
+}
+
+.dropdown-content ul {
+  font-size: 14px;
+  color: #ff850a;
+  font-weight: bold;
+  padding-left: 16px;
+  padding-right: 10px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown:hover .dropdown-content {
+  display: flex;
+  flex-direction: row;
+}
+.dropdown-content li:hover {
+  color: #ff850a;
+}
+.dropdown-column-division {
+  border-right: 0.5px solid rgb(183, 182, 182);
+  flex: 1;
+  padding-right: 15px;
+  min-width: 17vw;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #f0f0f0;
+}
+/* Dropdown2 Styles */
+.dropdown2 {
+  position: relative;
+  display: inline-block; /* or 'flex' if you want it to be a flex container */
+}
+
+.dropbtn2 {
+  text-decoration: none;
+  color: #333;
+  padding: 10px 15px;
+  background-color: #f8f8f8;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-content2 {
+  padding: 10px;
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px; /* Set a minimum width for the dropdown */
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+
+  white-space: nowrap;
+}
+
+.dropdown-content2 ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown-content2 li {
+  padding-left: 14px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: black;
+  padding-right: 15px;
+  list-style-type: none;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 400;
+
+  display: block; /* This makes the whole area of list item clickable */
+}
+
+.dropdown-content2 li:hover {
+  color: #ff850a;
+  background-color: #e9e9e9;
+}
+.dropdown a:hover {
+  color: #ff850a;
+}
+a:hover {
+  color: #ff850a;
+}
+
+.dropdown2:hover .dropdown-content2 {
+  display: block; /* Shows the dropdown menu on hover */
+}
+
+.dropdown2:hover .dropbtn2 {
+  background-color: #e7e7e7; /* Changes button bg color on hover */
+}
+
+.extras {
+  display: flex;
+  align-items: center;
+}
+
+.extras input[type="search"] {
+  padding: 8px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.submenu {
+  color: black;
+  padding-right: 15px;
+  list-style-type: none;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 400;
+}
+.submenu li {
+  padding-top: 10px;
+}
+.extras select {
+  padding: 8px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.extras .login {
+  padding: 10px 20px;
+  background-color: #0056b3;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.extras .login:hover {
+  background-color: #003366;
+}
+
+/* <!---------------------------------- NavBar design End ----------------------------------------------> */
