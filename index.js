@@ -1,3 +1,7 @@
+document.getElementById("reveSbc").addEventListener("click", function () {
+  window.location.href = "reveSbc.html";
+});
+
 document.addEventListener("DOMContentLoaded", function () {
   var rotatingBackground = document.getElementById("rotatingBackground");
   var angle = 0;
@@ -15,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var image = document.querySelector(".foreground-image2");
   var scaleDirection = 1; // Start with zoom in
   var MIN_SCALE = 0.8; // No zoom (original size)
-  var MAX_SCALE = 1.5; // Zoom in 10%
+  var MAX_SCALE = 1.7; // Zoom in 10%
   var currentScale = MIN_SCALE;
 
   setInterval(function () {
@@ -36,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var image = document.querySelector(".foreground-image3");
   var scaleDirection = 1; // Start with zoom in
   var MIN_SCALE = 0.8; // No zoom (original size)
-  var MAX_SCALE = 1.5; // Zoom in 10%
+  var MAX_SCALE = 1.7; // Zoom in 10%
   var currentScale = MIN_SCALE;
 
   setInterval(function () {
@@ -125,4 +129,26 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelector(".partnership-text").dataset.direction =
     "slide-in-right";
   observer.observe(document.querySelector(".partnership-text"));
+});
+
+function showContent(id) {
+  var contents = document.getElementsByClassName("tab-content");
+  for (var i = 0; i < contents.length; i++) {
+    contents[i].style.display = "none";
+  }
+
+  var tabs = document.getElementsByClassName("tab");
+  for (var i = 0; i < tabs.length; i++) {
+    tabs[i].classList.remove("active");
+  }
+
+  document.getElementById(id).style.display = "block";
+
+  var activeTab = document.querySelector(
+    ".tab[onclick=\"showContent('" + id + "')\"]"
+  );
+  activeTab.classList.add("active");
+}
+document.addEventListener("DOMContentLoaded", function () {
+  showContent("exclusive");
 });
