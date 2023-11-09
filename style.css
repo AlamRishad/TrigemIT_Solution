@@ -229,7 +229,6 @@ a:hover {
 .hero {
   display: flex;
   justify-content: space-between;
-
   padding: 20px;
 }
 
@@ -245,11 +244,11 @@ h1 {
   text-align: start;
 }
 
-.features {
+.features1 {
   list-style: none;
 }
 
-.features li {
+.features1 li {
   font-weight: bold;
   font-size: 22px;
   color: #006064;
@@ -339,9 +338,19 @@ h1 {
   background-size: cover;
   border-radius: 50%;
 }
+.girl {
+  position: absolute;
+  margin-left: -9vw;
+  width: 45px;
+  height: 45px;
+  top: 58%;
+  left: 15%;
+  background-size: cover;
+  border-radius: 50%;
+  z-index: 3;
+}
 .happy-girl-images {
   z-index: 2;
-
   position: absolute;
   width: 40px;
   height: 40px;
@@ -361,6 +370,9 @@ h1 {
 }
 .foreground-image3 {
   transition: transform 0.5s ease-in-out;
+}
+.foreground-image4 {
+  transition: transform 0.8s ease-in-out;
 }
 
 /* -------------------------------------------------------------- */
@@ -460,6 +472,20 @@ h1 {
   box-sizing: border-box;
 }
 
+/* Class that gets added when the section is in view */
+.partnership-image.in-view {
+  transform: translateX(0%);
+  opacity: 1;
+}
+.partnership-text.in-view {
+  transform: translateX(0%);
+  opacity: 1;
+}
+.partnership-image {
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: all 3s ease-in-out;
+}
 .partnership-image img {
   padding-left: 50px;
   height: 900%;
@@ -467,13 +493,15 @@ h1 {
 }
 
 .partnership-text {
+  transform: translateX(100%);
+  opacity: 0;
+  transition: all 3s ease-in-out;
   max-width: 35%;
   display: flex;
   padding-right: 150px;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  transform: translateX(100%);
 }
 
 .partnership-text h1 {
@@ -488,38 +516,17 @@ h1 {
   font-size: 1.5em;
   margin: 20px 0;
 }
-.partnership-image,
-.partnership-text {
-  opacity: 0;
-  transform: translateX(-100%);
-}
-
-@keyframes slideInFromLeft {
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInFromRight {
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.partnership-image {
-  animation: slideInFromLeft 1s forwards;
-}
-
-.partnership-text {
-  animation: slideInFromRight 1s forwards;
-}
-
 /* ---------------------------------------------------------------------------- */
-
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .demo-button2 {
-  margin-top: 3vw;
+  text-align: center;
+  margin-top: 2vw;
+  align-items: center;
   justify-content: center;
   padding: 18px 25px;
   background-color: #e8e8e8;
@@ -530,7 +537,6 @@ h1 {
   font-weight: 400;
   text-transform: uppercase;
   cursor: pointer;
-  outline: none;
   box-shadow: 0 4px 8px rgba(0, 123, 255, 0.25);
   transition: all 0.3s ease;
 }
@@ -566,8 +572,18 @@ h1 {
   border: 1px solid rgb(107, 106, 106);
   margin: 30px;
   padding: 65px;
+  opacity: 0;
+  transition: opacity 5s;
 }
-
+.trusted-card1.in-view {
+  opacity: 1;
+}
+.trusted-card2.in-view {
+  opacity: 1;
+}
+.trusted-card3.in-view {
+  opacity: 1;
+}
 .trusted-card img {
   width: 100px;
   height: 90px;
@@ -1077,4 +1093,78 @@ h1 {
 }
 .submit-btn {
   margin-top: 30px;
+}
+/* -------------------------------------------------------------------------------------  */
+.contact-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #f7f7f7;
+}
+.contact-input {
+  padding: 2vw 10vw;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+}
+.contact-section h2 {
+  font-size: 40px;
+  color: #333;
+  margin-bottom: 10px;
+}
+.contact-info {
+  text-align: left;
+  padding-right: 30px;
+  display: flex;
+  flex-direction: column; /* Stack p tags vertically */
+}
+.contact-info p {
+  align-items: flex-start;
+  justify-content: left;
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.icon {
+  padding-right: 10px;
+}
+
+.contact-form {
+  margin-right: 30px;
+}
+
+.contact-form form {
+  max-width: 300px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.contact-form textarea {
+  height: 120px;
+}
+.contact-form button {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #6872d9;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+.contact-form button:hover {
+  background-color: #ff850a;
+}
+
+.map {
+  max-width: 90%;
+  height: auto;
 }
