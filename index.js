@@ -1,5 +1,5 @@
-document.getElementById("reveSbc").addEventListener("click", function () {
-  window.location.href = "reveSbc.html";
+document.getElementById("trigemSbc").addEventListener("click", function () {
+  window.location.href = "trigemSbc.html";
 });
 
 document.addEventListener("DOMContentLoaded", function () {
