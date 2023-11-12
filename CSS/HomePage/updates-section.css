@@ -1,0 +1,52 @@
+.updates-section {
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+.updates-section h2 {
+  justify-content: center;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  font-size: 35px;
+  font-weight: 400;
+}
+
+.updates-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.update-card {
+  width: 25%;
+  background-color: #fff;
+  margin: 10px;
+  overflow: hidden;
+}
+
+.update-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.update-category {
+  display: block;
+  color: black;
+  text-transform: uppercase;
+  padding-left: 15px;
+  font-size: 0.9em;
+}
+
+.update-card h3 {
+  color: #0685ff;
+  font-size: 1.1em;
+  padding: 0 15px;
+}
+
+.update-card p {
+  font-size: 0.9em;
+  color: #666;
+  padding: 0 15px 15px;
+}

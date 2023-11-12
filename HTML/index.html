@@ -4,105 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TrigemIT Solution</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../CSS/style.css" />
+    <link rel="stylesheet" href="../CSS/footer.css" />
+    <link rel="stylesheet" href="../CSS/navbar.css" />
+    <link rel="stylesheet" href="../CSS/HomePage/hero-section.css" />
+    <link rel="stylesheet" href="../CSS/HomePage/card-section.css" />
+    <link rel="stylesheet" href="../CSS/HomePage/award-container.css" />
+    <link rel="stylesheet" href="../CSS/HomePage/parnership-container.css" />
+    <link rel="stylesheet" href="../CSS/HomePage/event-section.css" />
+    <link rel="stylesheet" href="../CSS/HomePage/product-section.css" />
+    <link rel="stylesheet" href="../CSS/HomePage/trusted-section.css" />
+
+    <link rel="stylesheet" href="../CSS/HomePage/updates-section.css" />
   </head>
   <body>
     <!---------------------------------- NavBar design ---------------------------------------------->
-    <div class="topbar">
-      <div class="logo">
-        TrigemIT Solutions
-        <span class="tagline">Mobile VoIP and IP Communication Platforms</span>
-      </div>
-      <nav class="navbar">
-        <a href="#" class="active">Home</a>
-        <div class="dropdown">
-          <a href="#" class="dropbtn">Products</a>
-          <div class="dropdown-content">
-            <div class="dropdown-column-division">
-              <ul href="#">
-                Carriers and Telecom Operators
-                <div class="submenu">
-                  <li id="trigemSbc">Trigem SBC</li>
-
-                  <li href="#">Trigem OTT</li>
-                  <li href="#">Trigem SMS Platform</li>
-                  <li href="#">iTel Billing</li>
-                  <li href="#">Cloud Telephony</li>
-                  <li href="#">Trigem SDK</li>
-                  <li href="#">Virtual Roaming Solution</li>
-                </div>
-              </ul>
-            </div>
-
-            <div class="dropdown-column-division">
-              <ul href="#">
-                IP Telephony Service Providers
-                <div class="submenu">
-                  <li href="#">iTel Mobile Dialer</li>
-                  <li href="#">Trigem SDK</li>
-                  <li href="#">Trigem SMS Platform</li>
-                  <li href="#">iTel Switch - Class 5</li>
-                </div>
-              </ul>
-            </div>
-
-            <div class="dropdown-column-division">
-              <ul href="#">
-                Enterprise
-
-                <div class="submenu">
-                  <li href="#">Trigem Secured Communication</li>
-                  <li href="#">Cloud Telephony</li>
-                  <li href="#">Trigem SDK</li>
-                </div>
-              </ul>
-            </div>
-            <div class="dropdown-column-division">
-              <ul href="#">
-                Cloud Products
-
-                <div class="submenu">
-                  <li href="#">Cloud Telephony</li>
-                  <li href="#">Hosted Dialer</li>
-
-                  <li href="#">Hosted Softswitch</li>
-                </div>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="dropdown2">
-          <a href="#" class="dropbtn2">Company</a>
-          <div class="dropdown-content2">
-            <ul>
-              <li href="#">About Us</li>
-              <li href="#">Leadership Team</li>
-              <li href="#">News</li>
-              <li href="#">Beyond Business</li>
-              <li href="#">Testimonials</li>
-              <li href="#">Event List</li>
-              <li href="#">Awards & Certifications</li>
-              <li href="#">Gallery</li>
-              <li href="#">Careers</li>
-            </ul>
-          </div>
-        </div>
-
-        <a href="#">Blog</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-      <div class="extras">
-        <input type="search" placeholder="Search..." />
-        <select>
-          <option value="english">English</option>
-          <option value="spanish">Spanish</option>
-          <option value="french">French</option>
-          <option value="bangla">Bangla</option>
-        </select>
-        <button class="login">Login</button>
-      </div>
-    </div>
-
+    <div id="navbar-container" class="navbar-container"></div>
     <!---------------------------------- NavBar design End ---------------------------------------------->
 
     <!---------------------------------- Hero section  ---------------------------------------------->
@@ -122,49 +39,45 @@
         <div class="image-container">
           <div class="fling-plane-image">
             <img
-              src="Images/fling-plane.png"
+              id="image1"
               alt="Person with laptop"
               class="foreground-image"
             />
           </div>
           <div class="happy-girl-images">
             <img
-              src="Images/happy-girl.png"
+              id="image2"
               alt="Person with laptop"
               class="foreground-image2"
             />
           </div>
           <div class="yellow-man">
             <img
-              src="Images/man-in-yellow.png"
+              id="image3"
               alt="Person with laptop"
               class="foreground-image3"
             />
           </div>
-
           <div class="girl">
-            <img src="Images/girl.png" alt="girl" class="foreground-image4" />
+            <img id="image4" alt="girl" class="foreground-image4" />
           </div>
           <div class="dotteted-circle-image">
             <img
-              src="Images/dotteted-circle.png"
+              id="image5"
               alt="Person with laptop"
               class="foreground-image"
             />
           </div>
+          <!-- Assuming rotatingBackground is not an img but a div with background-image -->
           <div id="rotatingBackground" class="rotating-background"></div>
-          <img
-            src="Images/happy-young-man-using-laptop-while-sitting-armchair-against-white-wall-copy-space-millennial-male-communicating-online-working-studying-remotely-portable-pc 1.png"
-            alt="Person with laptop"
-            class="foreground-image"
-          />
+          <img id="image6" alt="Person with laptop" class="foreground-image" />
         </div>
       </section>
       <section class="card-container">
         <h1 class="h1-container2">Cutting Edge Solution for your Business</h1>
         <div class="container2">
           <div class="card">
-            <img src="Images/Telco.png" alt="TELCOs" class="card-icon" />
+            <img id="telcosIcon" alt="TELCOs" class="card-icon" />
             <h3>TELCOs</h3>
             <p>
               Carrier-grade SBC, OTT, Billing & Cloud Telephony products with
@@ -174,7 +87,7 @@
 
           <div class="card">
             <img
-              src="Images/Service-Provider.png"
+              id="serviceProviderIcon"
               alt="Service Provider"
               class="card-icon"
             />
@@ -186,11 +99,7 @@
           </div>
 
           <div class="card">
-            <img
-              src="Images/Enterprise.png"
-              alt="Enterprise"
-              class="card-icon"
-            />
+            <img id="enterpriseIcon" alt="Enterprise" class="card-icon" />
             <h3>ENTERPRISE</h3>
             <p>
               Secured Communication Platforms for enterprises for faster
@@ -200,7 +109,7 @@
 
           <div class="card">
             <img
-              src="Images/Hosted-Plat.png"
+              id="hostedPlatformsIcon"
               alt="Hosted Platforms"
               class="card-icon"
             />
@@ -216,10 +125,7 @@
     <!-- --------------------------------partnership section------------------------------------------- -->
     <section class="partnership-container">
       <div class="partnership-image">
-        <img
-          src="Images/young-businessman-giving-presentation.png"
-          alt="Business Meeting"
-        />
+        <img id="businessMeetingImage" alt="Business Meeting" />
       </div>
       <div class="partnership-text">
         <h1>18+ Years</h1>
@@ -227,13 +133,14 @@
         <h1>80+ Countries</h1>
       </div>
     </section>
+
     <!-- <-----------------------------Our Product------------------------------------------ -->
     <section class="product">
       <div class="card-container">
         <h1 class="h1-container2">Our Products</h1>
         <div class="container2">
           <div class="card">
-            <img src="Images/Telco.png" alt="TELCOs" class="card-icon" />
+            <img id="telcoIcon2" alt="TELCOs" class="card-icon" />
             <h3>SESSION BORDER CONTROLER</h3>
             <p>
               Resilient, Robust & Reliable Session Border Controller with high
@@ -243,7 +150,7 @@
 
           <div class="card">
             <img
-              src="Images/Service-Provider.png"
+              id="serviceProviderIcon2"
               alt="Service Provider"
               class="card-icon"
             />
@@ -255,11 +162,7 @@
           </div>
 
           <div class="card">
-            <img
-              src="Images/Enterprise.png"
-              alt="Enterprise"
-              class="card-icon"
-            />
+            <img id="enterpriseIcon2" alt="Enterprise" class="card-icon" />
             <h3>CLOUD TELEPHONY</h3>
             <p>
               Complete white label Cloud PBX Solution that allows you to offer
@@ -269,7 +172,7 @@
 
           <div class="card">
             <img
-              src="Images/Hosted-Plat.png"
+              id="hostedPlatformIcon2"
               alt="Hosted Platforms"
               class="card-icon"
             />
@@ -290,13 +193,13 @@
       <div class="trusted-section">
         <h2>We are Trusted by Industry Leaders</h2>
         <div class="trusted-card trusted-card1">
-          <img src="Images/airtel.png" alt="Airtel" />
+          <img id="airtelLogo" alt="Airtel" />
         </div>
         <div class="trusted-card trusted-card2">
-          <img src="Images/bubbletone.png" alt="Bubbletone" />
+          <img id="bubbletoneLogo" alt="Bubbletone" />
         </div>
         <div class="trusted-card trusted-card3">
-          <img src="Images/btcl.png" alt="BTCL" />
+          <img id="btclLogo" alt="BTCL" />
         </div>
       </div>
     </section>
@@ -304,60 +207,49 @@
     <section class="award-main">
       <h2>Awards</h2>
       <div class="awards-container">
-        <div class="award">
-          <img
-            src="Images/award-1.png"
-            alt="Red Herring Logo"
-            class="award-logo"
-          />
+        <div class="award award1">
+          <img id="award1Image" alt="Red Herring Logo" class="award-logo" />
         </div>
-        <div class="award">
+        <div class="award award2">
           <img
-            src="Images/award-2.png"
+            id="award2Image"
             alt="Unified Communications Logo"
             class="award-logo"
           />
         </div>
-        <div class="award">
+        <div class="award award3">
           <img
-            src="Images/award-3.png"
+            id="award3Image"
             alt="Technology Awards Logo"
             class="award-logo"
           />
         </div>
       </div>
     </section>
+
     <!-- ............................event-section..................................... -->
     <section class="events-section">
       <h2>Events Participations</h2>
       <div class="events-container">
         <div class="event-card">
           <img
-            src="Images/capacity-europe.png"
+            id="softExpoImage"
             alt="Basis SoftExpo2023"
             class="event-image"
           />
           <p class="event-caption">Basis SoftExpo2023</p>
         </div>
         <div class="event-card">
-          <img
-            src="Images/communic-asia.png"
-            alt="CommunicAsia"
-            class="event-image"
-          />
+          <img id="communicAsiaImage" alt="CommunicAsia" class="event-image" />
           <p class="event-caption">CommunicAsia</p>
         </div>
         <div class="event-card">
-          <img
-            src="Images/itw-chicago.png"
-            alt="ITW Chicago"
-            class="event-image"
-          />
+          <img id="itwChicagoImage" alt="ITW Chicago" class="event-image" />
           <p class="event-caption">ITW Chicago</p>
         </div>
         <div class="event-card">
           <img
-            src="Images/basis-softexpo.png"
+            id="capacityEuropeImage"
             alt="Capacity Europe"
             class="event-image"
           />
@@ -366,13 +258,14 @@
       </div>
       <button class="view-more">View More</button>
     </section>
+
     <!-- -----------------------updates-section------------------------------------- -->
     <section class="updates-section">
       <h2>Latest Updates from Trigem Systems</h2>
       <div class="updates-container">
         <div class="update-card">
           <img
-            src="Images/A-Transform-Your-Landline-Service-into-Mobile-Operations-01.jpg"
+            id="telecomTransformationImage"
             alt="Telecom Transformation"
             class="update-image"
           />
@@ -393,7 +286,7 @@
         </div>
         <div class="update-card">
           <img
-            src="Images/A2P-SMS-Aggregator-1024x536.jpg"
+            id="a2pSmsAggregatorImage"
             alt="A2P SMS Aggregator"
             class="update-image"
           />
@@ -409,11 +302,7 @@
           </p>
         </div>
         <div class="update-card">
-          <img
-            src="Images/The-Best-SMS-Gateway-Platform-2.jpg"
-            alt="SMS Gateway"
-            class="update-image"
-          />
+          <img id="smsGatewayImage" alt="SMS Gateway" class="update-image" />
           <span class="update-category">SMS Platform</span>
           <h3>
             Future-Proofing Your Business: How to Pick the Best SMS Gateway?
@@ -430,105 +319,13 @@
       </div>
     </section>
     <!-- -----------------------------------------footer--------------------------------------- -->
-    <footer class="footer">
-      <div class="footer-grid">
-        <div class="footer-section">
-          <h3>Company Profile</h3>
-          <ul>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Leadership Team</a></li>
-            <li><a href="#">Awards</a></li>
-            <li><a href="#">Gallery</a></li>
-            <li><a href="#">News</a></li>
-            <li><a href="#">Beyond Business</a></li>
-            <li><a href="#">Events</a></li>
-            <li><a href="#">Partners</a></li>
-          </ul>
-        </div>
+    <div id="footer-container"></div>
+    <!-- ---------------------------------------------------------------- --  -->
 
-        <div class="footer-section-2">
-          <h3>Products</h3>
-          <div class="footer-grid-2">
-            <div class="footer-section">
-              <ul>
-                <li><a href="#">Carriers and Telecom Operators</a></li>
+    <script src="../JS/index.js"></script>
+    <script src="../JS/images.js"></script>
 
-                <li><a href="#">Trigem SBC</a></li>
-                <li><a href="#">Trigem OTT</a></li>
-                <li><a href="#"> Trigem SMS Platform</a></li>
-                <li><a href="#"> Trigem SMS Platform</a></li>
-                <li><a href="#"> iTel Billing</a></li>
-                <li><a href="#"> Cloud Telephony</a></li>
-                <li><a href="#"> Trigem SDK</a></li>
-              </ul>
-            </div>
-
-            <div class="footer-section">
-              <ul>
-                <li><a href="#">Cloud Telephony</a></li>
-                <li><a href="#">Hosted Dialer</a></li>
-                <li><a href="#">Trigem SMS Platform</a></li>
-                <li><a href="#">iTel Switch-Class 5</a></li>
-                <li><a href="#"> iTel Mobile Dialer</a></li>
-                <li><a href="#">Trigem SDK</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="footer-section">
-          <h3>Useful Links</h3>
-          <ul>
-            <li><a href="#">Downloads</a></li>
-            <li><a href="#">Solutions at a Glance</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>
-          <span>
-            Copyright © 2023, TrigemIT Systems |
-            <a href="#">Privacy Policy</a> |
-            <a href="#">Cookie Policy</a>
-          </span>
-          <span
-            >Follow Us:
-            <a
-              href="https://www.facebook.com/"
-              target="_blank"
-              aria-label="Facebook"
-            >
-              <img src="Images/facebook.PNG" alt="Facebook" />
-            </a>
-
-            <a
-              href="https://www.youtube.com/"
-              target="_blank"
-              aria-label="YouTube"
-            >
-              <img src="Images/tweeter.PNG" alt="YouTube" />
-            </a>
-
-            <a
-              href="https://www.linkedin.com/"
-              target="_blank"
-              aria-label="linkedin"
-            >
-              <img src="Images/linkedIn.PNG" alt="linkedin" />
-            </a>
-            <a
-              href="https://www.twitter.com/"
-              target="_blank"
-              aria-label="twitter"
-            >
-              <img src="Images/youtube.PNG" alt="twitter" />
-            </a>
-          </span>
-          <span>Email: marketing@trigemsoft.com</span>
-        </p>
-      </div>
-    </footer>
-
-    <script src="index.js"></script>
+    <script src="../JS/navbar.js"></script>
+    <script src="../JS/footer.js"></script>
   </body>
 </html>

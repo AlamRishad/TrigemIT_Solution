@@ -1,0 +1,40 @@
+.trusted-section {
+  background-image: url("../Images/leader-bg.png");
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding-bottom: 40px;
+  text-align: center;
+}
+
+.trusted-section h2 {
+  padding-top: 30px;
+  margin-bottom: 20px;
+  font-size: 35px;
+  font-weight: 400;
+}
+
+.trusted-card {
+  display: inline-block;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgb(107, 106, 106);
+  margin: 30px;
+  padding: 65px;
+  opacity: 0;
+  transition: opacity 5s;
+}
+.trusted-card1.in-view {
+  opacity: 1;
+}
+.trusted-card2.in-view {
+  opacity: 1;
+}
+.trusted-card3.in-view {
+  opacity: 1;
+}
+.trusted-card img {
+  width: 100px;
+  height: 90px;
+  padding: 17px;
+}

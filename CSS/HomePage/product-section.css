@@ -1,0 +1,30 @@
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.demo-button2 {
+  text-align: center;
+  margin-top: 2vw;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 25px;
+  background-color: #e8e8e8;
+  color: #007bff;
+  border: 1px solid #0056b3;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.25);
+  transition: all 0.3s ease;
+}
+
+.demo-button2:hover,
+.demo-button2:focus {
+  color: white;
+  background-color: #0056b3;
+  box-shadow: 0 6px 12px rgba(0, 123, 255, 0.35);
+}

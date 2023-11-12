@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="../CSS/style.css" />
+
+    <link rel="stylesheet" href="../CSS/footer.css" />
+    <link rel="stylesheet" href="../CSS/navbar.css" />
+    <title>TrigemSBC</title>
+  </head>
+  <body>
+    <!---------------------------------- NavBar design ---------------------------------------------->
+    <div id="navbar-container" class="navbar-container"></div>
+    <!---------------------------------- NavBar design End ---------------------------------------------->
+
+    <section>
+      <div class="sbc-container">
+        <div class="sbc-content">
+          <h1>Trigem SBC</h1>
+          <h2>Session Border Controller for Wholesale Carrier Service</h2>
+          <p>
+            Ensure Scalability, Security & High Performance for Real-time
+            Communication
+          </p>
+          <button class="btn-demo">GET STARTED</button>
+        </div>
+        <div class="sbc-image">
+          <img id="sbc-banner" alt="REVE SBC Illustration" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------- ------- -->
+    <section>
+      <div class="sbc-container2">
+        <h1>Session Border Controller (SBC)</h1>
+        <p>
+          Trigem Session Border Controller (SBC) is a powerful and scalable
+          Class 4 Softswitch platform for communication service providers. With
+          Trigem SBC, your network security becomes robust and promising. Our
+          virtual session border controller has distributed architecture for
+          network availability & resilience to prevent any threat. Powered with
+          a real-time billing platform with intelligent routing, Trigem SBC
+          telecom software makes your IP wholesale business more scalable. You
+          can manage your wholesale VoIP traffic seamlessly with Trigem SBC.
+        </p>
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------- --- -->
+    <div class="features-grid feature"></div>
+
+    <!-- -----------------------------------------------------------  -->
+
+    <section id="tabbedMenu-container"></section>
+
+    <!-- ------------------------------------------------  ----  -->
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        showContent("exclusive"); // Replace 'exclusive' with the ID of your first tab content
+      });
+      function showContent(id) {
+        var contents = document.getElementsByClassName("tab-content");
+        for (var i = 0; i < contents.length; i++) {
+          contents[i].style.display = "none";
+        }
+
+        var tabs = document.getElementsByClassName("tab");
+        for (var i = 0; i < tabs.length; i++) {
+          tabs[i].classList.remove("active");
+        }
+
+        document.getElementById(id).style.display = "block";
+
+        var activeTab = document.querySelector(
+          ".tab[onclick=\"showContent('" + id + "')\"]"
+        );
+        activeTab.classList.add("active");
+      }
+    </script>
+
+    <!-- -------------------------------------------------------------------  -->
+
+    <section class="">
+      <div class="form-container">
+        <h1>Looking for a SBC for Your Business?</h1>
+        <p>Please fill in your Details for a Free Demo</p>
+        <form action="" method="POST">
+          <div class="form-row">
+            <input
+              type="text"
+              name="first_name"
+              placeholder="First Name*"
+              required
+            />
+            <input
+              type="text"
+              name="phone"
+              placeholder="Phone Number*"
+              required
+            />
+          </div>
+          <div class="form-row">
+            <input
+              type="text"
+              name="last_name"
+              placeholder="Last Name*"
+              required
+            />
+            <select name="telecom_business">
+              <option value="">Are you currently into Telecom Business?</option>
+              <option value="">Yes</option>
+              <option value="">No</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <input type="email" name="email" placeholder="Email*" required />
+            <select name="business_type">
+              <option value="">Type of Business</option>
+              <option value="">WholeSale VoIp</option>
+              <option value="">Retails VoIP</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <input
+              type="text"
+              name="company_name"
+              placeholder="Company Name*"
+              required
+            />
+            <select name="wholesale_switch">
+              <option value="">Are you using any Wholesale Switch</option>
+              <option value="">Yes</option>
+              <option value="">No</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <select name="country">
+              <option value="bangladesh">Bangladesh</option>
+              <option value="india">India</option>
+              <option value="pakisthan">Pakisthan</option>
+            </select>
+          </div>
+
+          <div class="submit-btn">
+            <button class="btn-demo" type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------footer--------------------------------------- -->
+    <div id="footer-container"></div>
+    <!-- ---------------------------------------------------------------- --  -->
+
+    <script src="../JS/index.js"></script>
+    <script src="../JS/footer.js"></script>
+    <script src="../JS/images.js"></script>
+    <script src="../JS/navbar.js"></script>
+
+    <script src="../JS/tabbed-menu.js"></script>
+
+    <script src="../JS/feature-grid.js"></script>
+  </body>
+</html>

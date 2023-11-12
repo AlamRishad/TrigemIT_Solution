@@ -1,0 +1,62 @@
+.events-section {
+  text-align: center;
+  background-image: url("../../Images/event-bg.png");
+  padding: 20px;
+}
+
+.events-section h2 {
+  margin-top: 50px;
+  margin-bottom: 30px;
+  font-size: 35px;
+  font-weight: 400;
+}
+
+.events-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.event-card {
+  border-radius: 10px;
+  overflow: hidden;
+  transform: scale(1);
+  transition: transform 0.3s ease;
+}
+
+.event-card:hover {
+  transform: scale(1.05);
+}
+
+.event-image {
+  width: 250px;
+  height: auto;
+  display: block;
+}
+
+.event-caption {
+  padding-top: 5px;
+  font-size: 0.9em;
+  color: black;
+  font-weight: 400;
+  font-style: bold;
+}
+
+.view-more {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-size: 22px;
+  background: #e8e8e8;
+  border: 1px solid #0e66ff;
+  color: #0e66ff;
+  border-radius: 20px;
+  padding: 15px 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.view-more:hover {
+  color: white;
+  background-color: #0685ff;
+}

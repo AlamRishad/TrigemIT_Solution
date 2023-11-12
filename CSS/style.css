@@ -1,0 +1,303 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+/* <!---------------------------------- NavBar design End ----------------------------------------------> */
+
+/* -------------------------Reve Sbc page ------------------------------------------------ */
+.sbc-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 50px 50px 100px;
+  background: white;
+}
+
+.sbc-content {
+  max-width: 50%;
+}
+
+.sbc-content h1 {
+  color: #0cb6e0;
+  margin-bottom: 10px;
+}
+
+.sbc-content h2 {
+  max-width: 70%;
+  font-weight: 600;
+  color: #003366;
+  font-style: bold;
+  margin-bottom: 20px;
+}
+
+.sbc-content p {
+  max-width: 70%;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.btn-demo {
+  background-color: #6872d9; /* Blue background for the button */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.btn-demo:hover {
+  background-color: #fb7c12;
+}
+
+.sbc-image img {
+  width: 80%;
+
+  padding-right: 12vw;
+}
+/* ----------------------------------------- ---------- > */
+
+.sbc-container2 {
+  justify-content: center;
+  width: 80%;
+  margin: 0 auto;
+  padding: 50px 0;
+  text-align: justify;
+}
+
+.sbc-container2 h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #000;
+}
+
+.sbc-container2 p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+}
+/* --------------------------------------------------------- ---- */
+.features-section h2 {
+  color: #333;
+  margin-bottom: 30px;
+  justify-content: center;
+  text-align: center;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  padding: 20px;
+  margin: 0px 100px 10px 100px;
+}
+
+.feature {
+  background-color: #fff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+  margin: 0vw 15vw 0vw 15vw;
+}
+
+.feature-item {
+  display: flex;
+  padding: 10px;
+}
+
+.feature-item:hover {
+  transform: translateY(-5px);
+}
+
+.feature-item img {
+  width: 70px;
+  height: auto;
+  margin-bottom: 20px;
+  padding-right: 2vw;
+}
+
+.feature-item p {
+  color: #666;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* ------------------------------------------------------------------------  */
+
+.tabbed-menu {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  padding: 20px;
+}
+
+.tab {
+  border: 1px solid #ddd;
+  padding: 8px 35px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  margin: 0 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  top: 1px;
+  box-shadow: none;
+  border-bottom: 3px solid transparent;
+}
+
+.tab:hover,
+.tab.active {
+  border-bottom: 3px solid transparent;
+  background-color: #f9f9f9;
+  top: 0;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.tab-content {
+  display: none;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-top: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+/* -------------------------------------------------------------------------------- - */
+.features {
+  text-align: center;
+}
+
+.features h1 {
+  color: black;
+  font-size: 30px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.feature-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1vw 1vw 1vw 1vw;
+}
+
+.feature-text h2 {
+  color: #005792;
+}
+
+.feature-text p {
+  padding-left: 15vw;
+  max-width: 50%;
+  text-align: left;
+  color: #666;
+}
+
+.feature-image img {
+  padding-right: 15vw;
+  width: 350px;
+  height: auto;
+}
+/* ------------------------------------------------------------  */
+.resources-container {
+  display: flex;
+  justify-content: space-around; /* Distribute space around the resource items */
+  align-items: center; /* Align items vertically */
+  padding: 20px;
+}
+
+.resource {
+  border: 1px solid #ddd; /* Add a border */
+  padding: 20px;
+  border-radius: 10px; /* Rounded corners for the border */
+  width: 200px; /* Fixed width */
+  margin: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow for a 3D effect */
+}
+
+.resource h3 {
+  margin: 10px 0;
+  text-align: center;
+}
+
+.resource-image {
+  width: 100%; /* Responsive image width */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 15px;
+}
+
+.download-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #007bff; /* Blue background */
+  color: white; /* White text */
+  text-decoration: none; /* No underline */
+  padding: 10px 20px; /* Padding inside the button */
+  border-radius: 5px; /* Rounded corners for the button */
+  transition: background-color 0.3s; /* Transition effect for the background */
+}
+
+.download-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+/* ----------------------------------------------------  */
+
+.form-column {
+  display: flex;
+  flex-direction: column;
+  width: 48%;
+}
+.form-container {
+  width: 50%;
+  margin: 30px auto 30px;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.form-container h1 {
+  color: black;
+  font-weight: 400;
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 0.5em;
+}
+
+.form-container p {
+  font-size: 15px;
+  margin-bottom: 1em;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.form-row input,
+.form-row select {
+  flex: 1;
+  margin-right: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+.submit-btn {
+  margin-top: 30px;
+}
+/* ------------------------------------------------------------------------------------  */

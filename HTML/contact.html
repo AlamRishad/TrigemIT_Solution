@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact</title>
+    <link rel="stylesheet" href="../CSS/style.css" />
+    <link rel="stylesheet" href="../CSS/footer.css" />
+
+    <link rel="stylesheet" href="../CSS/ContactPage/contact-section.css" />
+    <link rel="stylesheet" href="../CSS/navbar.css" />
+  </head>
+  <body>
+    <!---------------------------------- NavBar design ---------------------------------------------->
+    <div id="navbar-container" class="navbar-container"></div>
+    <!---------------------------------- NavBar design End ---------------------------------------------->
+
+    <!-- -------------------------------------------  -->
+    <section class="contact-section">
+      <h2>Contact us!</h2>
+      <div class="contact-input">
+        <div class="contact-info">
+          <p><span class="icon">📍</span> Natunbazar, Dhaka, Bangladesh</p>
+          <p><span class="icon">✉️</span> mahfuzulalamrishad@gmail.com</p>
+          <img src="../Images/map.PNG" alt="Map" class="map" />
+        </div>
+        <div class="contact-form">
+          <form id="contactForm">
+            <input type="text" id="name" placeholder="NAME" required />
+            <input type="email" id="email" placeholder="EMAIL" required />
+            <textarea id="message" placeholder="MESSAGE" required></textarea>
+            <button type="submit">SUBMIT</button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <!-- -----------------------------------------footer--------------------------------------- -->
+    <div id="footer-container"></div>
+    <!-- ---------------------------------------------------------------- --  -->
+
+    <script>
+      function saveContactData(name, email, message) {
+        let existingData = JSON.parse(
+          localStorage.getItem("contactDataArray") || "[]"
+        );
+        existingData.push({ name, email, message });
+        localStorage.setItem("contactDataArray", JSON.stringify(existingData));
+      }
+
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          const name = document.getElementById("name").value;
+          const email = document.getElementById("email").value;
+          const message = document.getElementById("message").value;
+
+          saveContactData(name, email, message);
+          this.reset();
+        });
+    </script>
+    <script src="../JS/index.js"></script>
+    <script src="../JS/footer.js"></script>
+    <script src="../JS/navbar.js"></script>
+  </body>
+</html>

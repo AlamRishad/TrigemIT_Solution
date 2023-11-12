@@ -1,0 +1,81 @@
+.top-main-container {
+  background-image: url("../Images/home-bg-desktop.jpg");
+}
+.container2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px;
+  gap: 20px;
+}
+.h1-container2 {
+  text-align: center;
+  color: #333;
+  font-family: "Quicksand", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 34px;
+  margin-top: 0;
+  margin-bottom: 0;
+  max-width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container2 .card {
+  background-color: rgba(255, 255, 255, 0.53);
+  transform: translateY(100px);
+  transition: transform 0.3s ease-out;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 250px;
+  height: 300px;
+  margin: 10px;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  background: #ffffff;
+  transform: translateY(-15px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
+}
+
+.card.active {
+  transform: translateY(-15px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
+  background: #ffffff;
+}
+
+.card-icon {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 10px;
+}
+.card-rise {
+  transform: translateY(0);
+  opacity: 1;
+}
+.card h3 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: #666;
+  font-size: 14px;
+  flex-grow: 1;
+}
+
+@media (max-width: 768px) {
+  .container2 {
+    flex-direction: column;
+  }
+}

@@ -1,76 +1,41 @@
-document.getElementById("trigemSbc").addEventListener("click", function () {
-  window.location.href = "trigemSbc.html";
-});
-
 document.addEventListener("DOMContentLoaded", function () {
   var rotatingBackground = document.getElementById("rotatingBackground");
   var angle = 0;
-
   function rotateBackground() {
     angle = (angle + 0.5) % 360;
     rotatingBackground.style.transform =
       "translate(-50%, -50%) rotate(" + angle + "deg)";
     requestAnimationFrame(rotateBackground);
   }
-
   rotateBackground();
+
+  var image2 = document.querySelector(".foreground-image2");
+  scaleAnimation(image2, 0.8, 1.7);
+
+  var image3 = document.querySelector(".foreground-image3");
+  scaleAnimation(image3, 0.8, 1.7);
+
+  var image4 = document.querySelector(".foreground-image4");
+  scaleAnimation(image4, 0.7, 1.5);
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  var image = document.querySelector(".foreground-image2");
+function scaleAnimation(imageElement, minScale, maxScale) {
   var scaleDirection = 1;
-  var MIN_SCALE = 0.8;
-  var MAX_SCALE = 1.7;
-  var currentScale = MIN_SCALE;
+  var currentScale = minScale;
 
-  setInterval(function () {
-    if (currentScale >= MAX_SCALE) {
+  function animate() {
+    if (currentScale >= maxScale) {
       scaleDirection = -1;
-    } else if (currentScale <= MIN_SCALE) {
+    } else if (currentScale <= minScale) {
       scaleDirection = 1;
     }
-
     currentScale += scaleDirection * 0.05;
-    image.style.transform = `scale(${currentScale})`;
-  }, 50);
-});
+    imageElement.style.transform = "scale(" + currentScale + ")";
+    requestAnimationFrame(animate);
+  }
+  animate();
+}
 
-document.addEventListener("DOMContentLoaded", function () {
-  var image = document.querySelector(".foreground-image3");
-  var scaleDirection = 1;
-  var MIN_SCALE = 0.8;
-  var MAX_SCALE = 1.7;
-  var currentScale = MIN_SCALE;
-
-  setInterval(function () {
-    if (currentScale >= MAX_SCALE) {
-      scaleDirection = -1;
-    } else if (currentScale <= MIN_SCALE) {
-      scaleDirection = 1;
-    }
-
-    currentScale += scaleDirection * 0.05;
-    image.style.transform = `scale(${currentScale})`;
-  }, 50);
-});
-document.addEventListener("DOMContentLoaded", function () {
-  var image = document.querySelector(".foreground-image4");
-  var scaleDirection = 1;
-  var MIN_SCALE = 0.3;
-  var MAX_SCALE = 1.3;
-  var currentScale = MIN_SCALE;
-
-  setInterval(function () {
-    if (currentScale >= MAX_SCALE) {
-      scaleDirection = -1;
-    } else if (currentScale <= MIN_SCALE) {
-      scaleDirection = 1;
-    }
-
-    currentScale += scaleDirection * 0.05;
-    image.style.transform = `scale(${currentScale})`;
-  }, 50);
-});
 document.addEventListener("DOMContentLoaded", function () {
   var cards = document.querySelectorAll(".container2 .card");
 
@@ -177,4 +142,25 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   rotateBackground();
+});
+document.addEventListener("DOMContentLoaded", (event) => {
+  const awardSections = document.querySelectorAll(".award, .award1"); // Select all award sections
+  function checkSectionsInView() {
+    awardSections.forEach((section) => {
+      const sectionPos = section.getBoundingClientRect().top;
+      const screenPos = window.innerHeight;
+
+      if (sectionPos < screenPos) {
+        section.classList.add("in-view");
+      } else {
+        section.classList.remove("in-view");
+      }
+    });
+  }
+
+  // Check on load
+  checkSectionsInView();
+
+  // Check on scroll
+  window.addEventListener("scroll", checkSectionsInView);
 });

@@ -1,0 +1,57 @@
+.partnership-container {
+  background-image: url("../Images/home-bg-desktop.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 900px;
+  color: #0685ff;
+  padding-top: 20px;
+  box-sizing: border-box;
+}
+
+/* Class that gets added when the section is in view */
+.partnership-image.in-view {
+  transform: translateX(0%);
+  opacity: 1;
+}
+.partnership-text.in-view {
+  transform: translateX(0%);
+  opacity: 1;
+}
+.partnership-image {
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: all 3s ease-in-out;
+}
+.partnership-image img {
+  padding-left: 50px;
+  height: 900%;
+  width: auto;
+}
+
+.partnership-text {
+  transform: translateX(100%);
+  opacity: 0;
+  transition: all 3s ease-in-out;
+  max-width: 35%;
+  display: flex;
+  padding-right: 150px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.partnership-text h1 {
+  font-size: 4em;
+  font-weight: bold;
+  word-wrap: normal;
+  color: #0685ff;
+  margin: 0;
+}
+
+.partnership-text p {
+  font-size: 1.5em;
+  margin: 20px 0;
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Display Contact Data</title>
+  </head>
+  <body>
+    <div id="contactInfo"></div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const contactInfoDiv = document.getElementById("contactInfo");
+        const contactDataArrayString = localStorage.getItem("contactDataArray"); // Make sure the key matches what you used to save the data
+        const contactDataArray = JSON.parse(contactDataArrayString || "[]");
+
+        if (contactDataArray.length > 0) {
+          contactDataArray.forEach(function (contact, index) {
+            const contactElement = document.createElement("div");
+            contactElement.innerHTML = `
+                        <p><strong>Contact ${index + 1}</strong></p>
+                        <p>Name: ${contact.name}</p>
+                        <p>Email: ${contact.email}</p>
+                        <p>Message: ${contact.message}</p>
+                    `;
+            contactInfoDiv.appendChild(contactElement);
+          });
+        } else {
+          contactInfoDiv.innerHTML = "<p>No contact data found.</p>";
+        }
+      });
+    </script>
+  </body>
+</html>
