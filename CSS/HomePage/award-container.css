@@ -76,3 +76,8 @@
   transform: translateX(0%);
   opacity: 1;
 }
+@media screen and (min-width: 2000px) {
+  .award-main {
+    height: 70vh;
+  }
+}

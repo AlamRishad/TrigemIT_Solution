@@ -1,17 +1,14 @@
 .partnership-container {
-  background-image: url("../Images/home-bg-desktop.jpg");
-  background-size: cover;
-  background-position: center;
+  background-image: url("../../Images/home-bg-desktop.jpg");
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   height: 900px;
   color: #0685ff;
   padding-top: 20px;
   box-sizing: border-box;
 }
 
-/* Class that gets added when the section is in view */
 .partnership-image.in-view {
   transform: translateX(0%);
   opacity: 1;
@@ -32,6 +29,7 @@
 }
 
 .partnership-text {
+  padding-left: 5vw;
   transform: translateX(100%);
   opacity: 0;
   transition: all 3s ease-in-out;

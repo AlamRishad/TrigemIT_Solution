@@ -5,7 +5,7 @@
 }
 
 .content {
-  max-width: 50%;
+  max-width: 40%;
   padding-left: 4vw;
 }
 
@@ -137,11 +137,56 @@ h1 {
   z-index: 2;
 }
 .foreground-image2 {
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.2s ease-in-out;
 }
 .foreground-image3 {
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.2s ease-in-out;
 }
 .foreground-image4 {
-  transition: transform 0.8s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+}
+
+@media screen and (min-width: 2000px) {
+  .hero {
+    justify-content: center;
+  }
+  .content {
+    max-width: 50%;
+  }
+  h1 {
+    max-width: 50%;
+  }
+  .rotating-background {
+    position: absolute;
+    margin-left: -6vw;
+    width: 220px;
+    height: 220px;
+    top: 49%;
+    left: 41%;
+    transform: translate(-50%, -50%);
+    background-image: url("../../Images/Globe_1_.png");
+    background-size: cover;
+    border-radius: 50%;
+  }
+  .girl {
+    position: absolute;
+    margin-left: -7vw;
+    width: 45px;
+    height: 45px;
+    top: 58%;
+    left: 15%;
+    background-size: cover;
+    border-radius: 50%;
+    z-index: 3;
+  }
+  .happy-girl-images {
+    z-index: 2;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 18%;
+    left: 1%;
+    background-size: cover;
+    border-radius: 50%;
+  }
 }

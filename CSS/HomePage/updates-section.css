@@ -50,3 +50,8 @@
   color: #666;
   padding: 0 15px 15px;
 }
+@media screen and (min-width: 2000px) {
+  .update-card {
+    width: 20%;
+  }
+}

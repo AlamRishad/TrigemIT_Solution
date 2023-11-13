@@ -1,166 +1,128 @@
-document.addEventListener("DOMContentLoaded", function () {
-  var rotatingBackground = document.getElementById("rotatingBackground");
-  var angle = 0;
-  function rotateBackground() {
-    angle = (angle + 0.5) % 360;
-    rotatingBackground.style.transform =
-      "translate(-50%, -50%) rotate(" + angle + "deg)";
-    requestAnimationFrame(rotateBackground);
-  }
-  rotateBackground();
+// document.addEventListener("DOMContentLoaded", function () {
+//   var cards = document.querySelectorAll(".container2 .card");
 
-  var image2 = document.querySelector(".foreground-image2");
-  scaleAnimation(image2, 0.8, 1.7);
+//   if (cards.length > 0) {
+//     cards[0].classList.add("active");
+//   }
 
-  var image3 = document.querySelector(".foreground-image3");
-  scaleAnimation(image3, 0.8, 1.7);
+//   cards.forEach(function (card) {
+//     card.addEventListener("click", function () {
+//       cards.forEach(function (c) {
+//         c.classList.remove("active");
+//       });
 
-  var image4 = document.querySelector(".foreground-image4");
-  scaleAnimation(image4, 0.7, 1.5);
-});
+//       card.classList.add("active");
+//     });
+//   });
+// });
 
-function scaleAnimation(imageElement, minScale, maxScale) {
-  var scaleDirection = 1;
-  var currentScale = minScale;
+// document.addEventListener("DOMContentLoaded", function () {
+//   var cards = document.querySelectorAll(".container2 .card");
 
-  function animate() {
-    if (currentScale >= maxScale) {
-      scaleDirection = -1;
-    } else if (currentScale <= minScale) {
-      scaleDirection = 1;
-    }
-    currentScale += scaleDirection * 0.05;
-    imageElement.style.transform = "scale(" + currentScale + ")";
-    requestAnimationFrame(animate);
-  }
-  animate();
-}
+//   function animateCards(entries, observer) {
+//     entries.forEach((entry) => {
+//       if (entry.isIntersecting) {
+//         entry.target.style.transition =
+//           "transform 0.5s ease-out, opacity 0.5s ease-out";
+//         entry.target.style.transform = "translateY(0)";
+//         entry.target.style.opacity = "1";
+//       } else {
+//         entry.target.style.transform = "translateY(100px)";
+//         entry.target.style.opacity = "0";
+//       }
+//     });
+//   }
 
-document.addEventListener("DOMContentLoaded", function () {
-  var cards = document.querySelectorAll(".container2 .card");
+//   let observer = new IntersectionObserver(animateCards, {
+//     threshold: 0.1,
+//     rootMargin: "0px",
+//   });
 
-  if (cards.length > 0) {
-    cards[0].classList.add("active");
-  }
+//   cards.forEach((card) => {
+//     observer.observe(card);
+//   });
+// });
 
-  cards.forEach(function (card) {
-    card.addEventListener("click", function () {
-      cards.forEach(function (c) {
-        c.classList.remove("active");
-      });
+// document.addEventListener("DOMContentLoaded", (event) => {
+//   const section = document.querySelector(".partnership-image");
 
-      card.classList.add("active");
-    });
-  });
-});
+//   window.addEventListener("scroll", () => {
+//     const sectionPos = section.getBoundingClientRect().top;
+//     const screenPos = window.innerHeight;
 
-document.addEventListener("DOMContentLoaded", function () {
-  var cards = document.querySelectorAll(".container2 .card");
+//     if (sectionPos < screenPos) {
+//       section.classList.add("in-view");
+//     } else {
+//       section.classList.remove("in-view");
+//     }
+//   });
+// });
+// document.addEventListener("DOMContentLoaded", (event) => {
+//   const section = document.querySelector(".partnership-text");
 
-  function animateCards(entries, observer) {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.style.transition =
-          "transform 0.5s ease-out, opacity 0.5s ease-out";
-        entry.target.style.transform = "translateY(0)";
-        entry.target.style.opacity = "1";
-      } else {
-        entry.target.style.transform = "translateY(100px)";
-        entry.target.style.opacity = "0";
-      }
-    });
-  }
+//   window.addEventListener("scroll", () => {
+//     const sectionPos = section.getBoundingClientRect().top;
+//     const screenPos = window.innerHeight;
 
-  let observer = new IntersectionObserver(animateCards, {
-    threshold: 0.1,
-    rootMargin: "0px",
-  });
+//     if (sectionPos < screenPos) {
+//       section.classList.add("in-view");
+//     } else {
+//       section.classList.remove("in-view");
+//     }
+//   });
+// });
+// document.addEventListener("DOMContentLoaded", (event) => {
+//   const section1 = document.querySelector(".trusted-card1");
+//   const section2 = document.querySelector(".trusted-card2");
+//   const section3 = document.querySelector(".trusted-card3");
+//   window.addEventListener("scroll", () => {
+//     const sectionPos = section1.getBoundingClientRect().top;
 
-  cards.forEach((card) => {
-    observer.observe(card);
-  });
-});
+//     const screenPos = window.innerHeight;
 
-document.addEventListener("DOMContentLoaded", (event) => {
-  const section = document.querySelector(".partnership-image");
+//     if (sectionPos < screenPos) {
+//       section1.classList.add("in-view");
+//       section2.classList.add("in-view");
+//       section3.classList.add("in-view");
+//     } else {
+//       section1.classList.remove("in-view");
+//       section2.classList.remove("in-view");
+//       section3.classList.remove("in-view");
+//     }
+//   });
+// });
 
-  window.addEventListener("scroll", () => {
-    const sectionPos = section.getBoundingClientRect().top;
-    const screenPos = window.innerHeight;
+// document.addEventListener("DOMContentLoaded", function () {
+//   var rotatingBackground = document.getElementById("");
+//   var angle = 0;
 
-    if (sectionPos < screenPos) {
-      section.classList.add("in-view");
-    } else {
-      section.classList.remove("in-view");
-    }
-  });
-});
-document.addEventListener("DOMContentLoaded", (event) => {
-  const section = document.querySelector(".partnership-text");
+//   function rotateBackground() {
+//     angle = (angle + 0.5) % 360;
+//     rotatingBackground.style.transform =
+//       "translate(-50%, -50%) rotate(" + angle + "deg)";
+//     requestAnimationFrame(rotateBackground);
+//   }
 
-  window.addEventListener("scroll", () => {
-    const sectionPos = section.getBoundingClientRect().top;
-    const screenPos = window.innerHeight;
+//   rotateBackground();
+// });
+// document.addEventListener("DOMContentLoaded", (event) => {
+//   const awardSections = document.querySelectorAll(".award, .award1");
+//   function checkSectionsInView() {
+//     awardSections.forEach((section) => {
+//       const sectionPos = section.getBoundingClientRect().top;
+//       const screenPos = window.innerHeight;
 
-    if (sectionPos < screenPos) {
-      section.classList.add("in-view");
-    } else {
-      section.classList.remove("in-view");
-    }
-  });
-});
-document.addEventListener("DOMContentLoaded", (event) => {
-  const section1 = document.querySelector(".trusted-card1");
-  const section2 = document.querySelector(".trusted-card2");
-  const section3 = document.querySelector(".trusted-card3");
-  window.addEventListener("scroll", () => {
-    const sectionPos = section1.getBoundingClientRect().top;
+//       if (sectionPos < screenPos) {
+//         section.classList.add("in-view");
+//       } else {
+//         section.classList.remove("in-view");
+//       }
+//     });
+//   }
 
-    const screenPos = window.innerHeight;
+//   // Check on load
+//   checkSectionsInView();
 
-    if (sectionPos < screenPos) {
-      section1.classList.add("in-view");
-      section2.classList.add("in-view");
-      section3.classList.add("in-view");
-    } else {
-      section1.classList.remove("in-view");
-      section2.classList.remove("in-view");
-      section3.classList.remove("in-view");
-    }
-  });
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  var rotatingBackground = document.getElementById("");
-  var angle = 0;
-
-  function rotateBackground() {
-    angle = (angle + 0.5) % 360;
-    rotatingBackground.style.transform =
-      "translate(-50%, -50%) rotate(" + angle + "deg)";
-    requestAnimationFrame(rotateBackground);
-  }
-
-  rotateBackground();
-});
-document.addEventListener("DOMContentLoaded", (event) => {
-  const awardSections = document.querySelectorAll(".award, .award1"); // Select all award sections
-  function checkSectionsInView() {
-    awardSections.forEach((section) => {
-      const sectionPos = section.getBoundingClientRect().top;
-      const screenPos = window.innerHeight;
-
-      if (sectionPos < screenPos) {
-        section.classList.add("in-view");
-      } else {
-        section.classList.remove("in-view");
-      }
-    });
-  }
-
-  // Check on load
-  checkSectionsInView();
-
-  // Check on scroll
-  window.addEventListener("scroll", checkSectionsInView);
-});
+//   // Check on scroll
+//   window.addEventListener("scroll", checkSectionsInView);
+// });

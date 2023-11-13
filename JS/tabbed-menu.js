@@ -113,7 +113,6 @@ document.addEventListener("DOMContentLoaded", function () {
 </div>
       `;
 
-  // Assuming there is a <div id="navbar-container"></div> in all your pages
   const footerContainer = document.getElementById("tabbedMenu-container");
   if (footerContainer) {
     footerContainer.innerHTML = tabbedMenu;

@@ -1,4 +1,5 @@
 .product {
+  background-image: url("../../Images/home-bg-desktop.jpg");
   display: flex;
   flex-direction: column;
   justify-content: center;

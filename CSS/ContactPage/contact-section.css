@@ -5,7 +5,7 @@
 }
 .contact-input {
   padding: 2vw 10vw;
-  justify-content: space-between;
+  justify-content: center;
   display: flex;
   flex-direction: row;
 }

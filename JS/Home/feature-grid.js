@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Define your feature items here
   const featureItems = [
     {
       imgSrc: "../Images/Robust-01.svg",

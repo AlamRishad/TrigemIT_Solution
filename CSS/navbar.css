@@ -4,8 +4,9 @@
   z-index: 1000;
 }
 .topbar {
-  display: flex;
   justify-content: space-between;
+
+  display: flex;
   align-items: center;
   background-color: #f8f8f8;
   padding: 10px 30px;
@@ -29,6 +30,7 @@
 .navbar {
   display: flex;
   align-items: center;
+  margin-left: 2vw;
 }
 
 .navbar a,
@@ -219,4 +221,9 @@ a:hover {
 
 .extras .login:hover {
   background-color: #003366;
+}
+@media screen and (min-width: 2000px) {
+  .topbar {
+    justify-content: space-evenly;
+  }
 }
