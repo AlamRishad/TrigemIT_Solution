@@ -70,6 +70,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.getElementById("hostedPlatformsIcon").src = imageSources.image4;
 
+  var cards2 = document.querySelectorAll(".container2 .card");
+
+  if (cards2.length > 0) {
+    cards2[0].classList.add("active");
+  }
+
+  cards2.forEach(function (card) {
+    card.addEventListener("click", function () {
+      cards2.forEach(function (c) {
+        c.classList.remove("active");
+      });
+
+      card.classList.add("active");
+    });
+  });
+
   const cards = document.querySelectorAll(".container2 .card");
   cards.forEach((card) => {
     card.style.transition = "transform 0.5s ease-out, opacity 0.5s ease-out";

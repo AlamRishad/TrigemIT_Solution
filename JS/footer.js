@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
   const footerHtml = `
     <footer class="footer">
+    
+    <div class="footer2">
     <div class="footer-grid">
       <div class="footer-section">
         <h3>Company Profile</h3>
@@ -54,7 +56,9 @@ document.addEventListener("DOMContentLoaded", function () {
         </ul>
       </div>
     </div>
+    </div>
     <div class="footer-bottom">
+    <div class="footer-bottom2">
       <p>
         <span>
           Copyright © 2023, TrigemIT Systems |
@@ -97,10 +101,11 @@ document.addEventListener("DOMContentLoaded", function () {
         <span>Email: marketing@trigemsoft.com</span>
       </p>
     </div>
+    
+    </div>
     </footer>
     `;
 
-  // Assuming there is a <div id="navbar-container"></div> in all your pages
   const footerContainer = document.getElementById("footer-container");
   if (footerContainer) {
     footerContainer.innerHTML = footerHtml;

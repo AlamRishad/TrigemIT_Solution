@@ -23,7 +23,6 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("businessMeetingImage").src =
     imageSources.businessMeeting;
 
-  // Call the function to add scroll event listener
   addScrollAnimation1();
 });
 

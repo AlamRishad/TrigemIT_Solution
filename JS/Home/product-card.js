@@ -81,6 +81,21 @@ document.addEventListener("DOMContentLoaded", function () {
     card.style.transform = "translateY(100px)";
     card.style.opacity = "0";
   });
+  var cards2 = document.querySelectorAll(".container2 .card");
+
+  if (cards2.length > 0) {
+    cards2[0].classList.add("active");
+  }
+
+  cards2.forEach(function (card) {
+    card.addEventListener("click", function () {
+      cards2.forEach(function (c) {
+        c.classList.remove("active");
+      });
+
+      card.classList.add("active");
+    });
+  });
 
   let observer = new IntersectionObserver(
     (entries, observer) => {

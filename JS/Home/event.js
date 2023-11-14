@@ -49,6 +49,5 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("capacityEuropeImage").src = imageSources.image3;
 
   document.getElementById("itwChicagoImage").src = imageSources.image4;
-  // Call the function to add scroll event listener
   addScrollAnimation2();
 });
