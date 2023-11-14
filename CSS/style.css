@@ -2,6 +2,14 @@ body {
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
+.navbar-container {
+  background-color: #f8f8f8;
+}
+.main-hero {
+  width: 90%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
 /* <!---------------------------------- NavBar design End ----------------------------------------------> */
 .top-main-container {
   background-image: url("../Images//home-bg-desktop.jpg");

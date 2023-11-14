@@ -2,15 +2,16 @@
   position: sticky;
   top: 0;
   z-index: 1000;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
 }
 .topbar {
   justify-content: space-between;
 
+  width: 90%;
+  padding-left: 5%;
+  padding-right: 5%;
   display: flex;
   align-items: center;
-  background-color: #f8f8f8;
-  padding: 10px 30px;
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
 }
 .navbar a.active {
   color: #ff850a;
