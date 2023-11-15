@@ -11,13 +11,31 @@
   font-size: 35px;
   font-weight: 400;
 }
+.update-image {
+  transform: translateX(-50px);
+  opacity: 0;
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
 
 .updates-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
-
+/* State when the card is in the viewport */
+.slide-in {
+  transform: translateX(0);
+  opacity: 1;
+}
+.update-content {
+  transform: translateX(100px);
+  opacity: 0;
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+.slide-in2 {
+  transform: translateX(0);
+  opacity: 1;
+}
 .update-card {
   width: 25%;
   background-color: #fff;

@@ -126,3 +126,23 @@
 //   // Check on scroll
 //   window.addEventListener("scroll", checkSectionsInView);
 // });
+document.addEventListener("DOMContentLoaded", function () {
+  var images = [
+    "/Images/24.jpg",
+    "/Images/top-view-career-written-note-with-stickers-notepad-white-background-job-office-copybook-salary-college-business-color_179666-19734.jpg",
+    "/Images/23.jpg",
+  ];
+  var currentImageIndex = 0;
+
+  function changeBackgroundImage() {
+    currentImageIndex = (currentImageIndex + 1) % images.length;
+    var section = document.querySelector(".career-section");
+    section.style.backgroundImage = "url(" + images[currentImageIndex] + ")";
+  }
+
+  // Initial set
+  changeBackgroundImage();
+
+  // Change background every 3 seconds
+  setInterval(changeBackgroundImage, 3000);
+});

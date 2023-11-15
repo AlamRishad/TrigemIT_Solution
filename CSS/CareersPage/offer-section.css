@@ -1,0 +1,58 @@
+.offers-section {
+  text-align: center;
+  padding: 50px;
+  background-color: #eee;
+}
+
+.offers-section h2 {
+  color: #333;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.offers-section p {
+  color: #888;
+  font-size: 1em;
+  line-height: 0.1;
+}
+
+.offers-icons {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.icon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 10px 30px 10px;
+}
+
+.icon-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border: 2px solid #ff8400;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  color: orange;
+  background-color: white;
+}
+
+.icon-circle .fas {
+  font-size: 24px;
+}
+
+.icon-container p {
+  text-align: center;
+  margin: 0;
+  color: #333;
+  font-size: 0.9rem;
+  line-height: 1.2;
+}

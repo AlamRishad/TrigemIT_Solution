@@ -1,0 +1,110 @@
+.career-section {
+  position: relative;
+  text-align: center;
+  color: white;
+  background-size: cover;
+  padding: 50px 0;
+  position: relative;
+  text-align: center;
+  color: rgb(40, 2, 2);
+  background-size: cover;
+  padding: 50px 0;
+  transition: background-image 0.5s ease-in-out; /* Smooth transition between images */
+}
+
+.career-section .content {
+  position: relative;
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 5px;
+  width: 70%;
+}
+
+.career-section h2 {
+  font-size: 2.5em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.career-section p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.join-btn {
+  display: inline-block;
+  background-color: #ff850a;
+  color: white;
+  padding: 15px 30px;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.join-btn:hover {
+  background-color: #e87400;
+}
+/* ------------------------------------------------------------------  */
+/* --------------------------------------------------------------  */
+
+.form-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+}
+
+.form-container p {
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+input[type="file"] {
+  padding: 10px 0;
+}
+
+button[type="submit"] {
+  padding: 15px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}

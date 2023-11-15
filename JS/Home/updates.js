@@ -8,12 +8,12 @@ document.addEventListener("DOMContentLoaded", function () {
           alt="Telecom Transformation"
           class="update-image"
         />
-        <span class="update-category">OTT</span>
-        <h3>
+        <span class="update-category update-content">OTT</span>
+        <h3 class="update-content">
           Telecom Transformed: How to Convert Your Landline Service into
           Mobile Operations?
         </h3>
-        <p>
+        <p class="update-content">
           In an ever-evolving digital landscape, fixed landline operators have
           witnessed substantial changes in their role over time. Primarily,
           these operators were responsible for providing landline phones and
@@ -29,9 +29,9 @@ document.addEventListener("DOMContentLoaded", function () {
           alt="A2P SMS Aggregator"
           class="update-image"
         />
-        <span class="update-category">SMS Platform</span>
-        <h3>How to Become a Successful A2P SMS Aggregator?</h3>
-        <p>
+        <span class="update-category update-content">SMS Platform</span>
+        <h3 class="update-content">How to Become a Successful A2P SMS Aggregator?</h3>
+        <p class="update-content">
           SMS remains a highly prevalent communication tool employed by
           businesses to disseminate their sales, marketing, and product or
           solution information to consumers. With the colossal volume of SMS
@@ -42,11 +42,11 @@ document.addEventListener("DOMContentLoaded", function () {
       </div>
       <div class="update-card">
         <img id="smsGatewayImage" alt="SMS Gateway" class="update-image" />
-        <span class="update-category">SMS Platform</span>
-        <h3>
+        <span class="update-category update-content">SMS Platform</span>
+        <h3 class="update-content">
           Future-Proofing Your Business: How to Pick the Best SMS Gateway?
         </h3>
-        <p>
+        <p class="update-content">
           As per stats, 64% of consumers think businesses should connect with
           them via text messages more often. Interestingly, 75% of consumers
           want to receive texts with special offers. Even with the
@@ -75,10 +75,12 @@ document.addEventListener("DOMContentLoaded", function () {
     imageSources.image1;
   document.getElementById("a2pSmsAggregatorImage").src = imageSources.image2;
   document.getElementById("smsGatewayImage").src = imageSources.image3;
-  addScrollAnimation2();
+  trustedaddScrollAnimation2();
+  trustedaddScrollAnimation3();
+  trustedaddScrollAnimation4();
 });
 
-function addScrollAnimation2() {
+function trustedaddScrollAnimation2() {
   const section1 = document.querySelector(".trusted-card1");
   const section2 = document.querySelector(".trusted-card2");
   const section3 = document.querySelector(".trusted-card3");
@@ -96,5 +98,53 @@ function addScrollAnimation2() {
       section2.classList.remove("in-view");
       section3.classList.remove("in-view");
     }
+  });
+}
+function trustedaddScrollAnimation3() {
+  const updateImages = document.querySelectorAll(".update-image");
+  const observerOptions = {
+    root: null,
+    threshold: 0.1,
+    rootMargin: "0px",
+  };
+
+  const observerCallback = (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("slide-in");
+      } else {
+        entry.target.classList.remove("slide-in");
+      }
+    });
+  };
+
+  const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+  updateImages.forEach((image) => {
+    observer.observe(image);
+  });
+}
+function trustedaddScrollAnimation4() {
+  const updateContents = document.querySelectorAll(".update-content");
+  const observerOptions = {
+    root: null,
+    threshold: 0.1,
+    rootMargin: "0px",
+  };
+
+  const observerCallback = (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("slide-in2");
+      } else {
+        entry.target.classList.remove("slide-in2");
+      }
+    });
+  };
+
+  const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+  updateContents.forEach((content) => {
+    observer.observe(content);
   });
 }

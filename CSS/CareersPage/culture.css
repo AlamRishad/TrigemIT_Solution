@@ -1,0 +1,56 @@
+.career-section2 {
+  position: relative;
+  text-align: center;
+  padding: 50px 0;
+  position: relative;
+  text-align: center;
+  color: rgb(57, 4, 4);
+  background-size: cover;
+  padding: 50px 0;
+
+  background-color: white;
+}
+.career-section2 .content2 {
+  padding: 20px;
+  border-radius: 5px;
+  width: 80%;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.career-section2 h1 {
+  font-size: 3.5em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.career-section2 p {
+  font-size: 1.7em;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+/* Initial state */
+.content-h1,
+.content-p {
+  opacity: 0;
+  transition: all 0.5s ease-out;
+}
+
+.content-h1 {
+  transform: translateX(-20%);
+}
+
+.content-p {
+  transform: translateX(20%);
+}
+
+/* Final state when element is in view */
+.slide-in-left {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.slide-in-right {
+  transform: translateX(0);
+  opacity: 1;
+}

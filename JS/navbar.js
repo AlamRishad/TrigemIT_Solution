@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
           </div>
         </div>
 
-        <a href="#">Blog</a>
+        <a href="careers.html">Careers</a>
         <a href="contact.html">Contact</a>
       </nav>
       <div class="extras">
@@ -116,6 +116,10 @@ function updateActiveLink() {
   } else if (currentPage === "contact.html") {
     document
       .querySelector('.navbar a[href="contact.html"]')
+      .classList.add("active");
+  } else if (currentPage === "careers.html") {
+    document
+      .querySelector('.navbar a[href="careers.html"]')
       .classList.add("active");
   } else if (currentPage === "trigemSbc.html") {
     document.querySelector(".navbar .dropbtn").classList.add("active");

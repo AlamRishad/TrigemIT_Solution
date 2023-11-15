@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/CSS/navbar.css" />
+    <link rel="stylesheet" href="/CSS/footer.css" />
+    <link rel="stylesheet" href="/CSS/style.css" />
+    <link rel="stylesheet" href="/CSS/CareersPage/career-section.css" />
+
+    <link rel="stylesheet" href="/CSS/CareersPage/offer-section.css" />
+    <link rel="stylesheet" href="/CSS/CareersPage/culture.css" />
+
+    <title>Careers</title>
+  </head>
+  <body>
+    <div id="navbar-container" class="navbar-container">
+      <div class="nav-bg"></div>
+    </div>
+
+    <section class="career-section">
+      <div class="content">
+        <h2>Contribute to the Future of Mobile VoIP & IP Communication</h2>
+        <p>
+          At REVE Systems you will have the freedom to explore across the globe
+          through experiencing different cultures while dedicatedly working
+          together as a team towards a common vision and goals
+        </p>
+        <a href="link_to_career_page.html" class="join-btn">JOIN REVE FAMILY</a>
+      </div>
+    </section>
+    <section class="career-section2">
+      <div class="content2">
+        <h1 class="content-h1">Culture</h1>
+        <p class="content-p">
+          At REVE Systems, we ensure the freedom for people to deliver their
+          best output and maintain the responsibility to achieve excellence. We
+          admire people who speak their minds and listen more while making a
+          real effort to understand views that differ from their own. People
+          here are friendly and helpful beyond expectation. Everyone shares a
+          common goal to make the best products and services for the customers.
+        </p>
+      </div>
+    </section>
+    <section class="offers-section">
+      <h2>What We Offer</h2>
+      <p class="content-p2">
+        When it comes to our benefits and perks, we have everything you’d expect
+        from a
+      </p>
+      <p class="content-p2">good company</p>
+      <div class="offers-icons">
+        <div class="icon-container">
+          <div class="icon-circle"><i class="fas fa-briefcase"></i></div>
+          <p class="content-p2">Career Development</p>
+          <p class="content-p2">Programs</p>
+        </div>
+        <div class="icon-container">
+          <div class="icon-circle"><i class="fas fa-heartbeat"></i></div>
+          <p class="content-p2">Personal Development</p>
+          <p class="content-p2">Development</p>
+          <p class="content-p2">Programs</p>
+        </div>
+        <div class="icon-container">
+          <div class="icon-circle"><i class="fas fa-brain"></i></div>
+
+          <p class="content-p2">Meditation for</p>
+          <p class="content-p2">greater focus and</p>
+          <p class="content-p2">concentration</p>
+        </div>
+        <div class="icon-container">
+          <div class="icon-circle"><i class="fas fa-clock"></i></div>
+
+          <p class="content-p2">Flexible work</p>
+          <p class="content-p2">schedule for</p>
+          <p class="content-p2">work-life balance</p>
+        </div>
+        <div class="icon-container">
+          <div class="icon-circle"><i class="fas fa-utensils"></i></div>
+
+          <p class="content-p2">Quality meals,</p>
+          <p class="content-p2">Breakfast &</p>
+          <p class="content-p2">snacks</p>
+        </div>
+        <div class="icon-container">
+          <div class="icon-circle"><i class="fas fa-tools"></i></div>
+
+          <p class="content-p2">Gymnasium &</p>
+          <p class="content-p2">recreational tools</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="form-container">
+        <h2>Drop Your Resume Here</h2>
+        <p>
+          We'll contact you if your qualification match with the requirements
+        </p>
+
+        <form id="resumeForm" action="/submit_resume" method="post">
+          <input
+            type="text"
+            name="first_name"
+            placeholder="First Name*"
+            required
+          />
+          <input
+            type="text"
+            name="last_name"
+            placeholder="Last Name*"
+            required
+          />
+          <input type="email" name="email" placeholder="Email*" required />
+          <select name="country" required>
+            <option value="bangladesh">Bangladesh</option>
+          </select>
+          <input type="tel" name="phone" placeholder="Phone Number*" required />
+          <select name="department" required>
+            <option value="">Select department you wish to work</option>
+            <option value="12">YEs</option>
+          </select>
+          <select name="location" required>
+            <option value="">Select your location you wish to work</option>
+            <option value="12">YEs</option>
+          </select>
+          <textarea
+            name="interest"
+            placeholder="What interests you about this department? Please write briefly. We would love to read"
+            required
+          ></textarea
+          ><input type="file" name="resume" accept="image/*" required />
+
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </section>
+    <div id="footer-container" class="footer-container"></div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const heading = document.querySelector(".content-h1");
+        const paragraph = document.querySelector(".content-p");
+
+        const observerOptions = {
+          root: null,
+          threshold: 0.1,
+          rootMargin: "0px",
+        };
+
+        const observerCallback = (entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              if (entry.target.classList.contains("content-h1")) {
+                entry.target.classList.add("slide-in-left");
+              } else if (entry.target.classList.contains("content-p")) {
+                entry.target.classList.add("slide-in-right");
+              }
+            } else {
+              entry.target.classList.remove("slide-in-left");
+
+              entry.target.classList.remove("slide-in-right");
+            }
+          });
+        };
+
+        const observer = new IntersectionObserver(
+          observerCallback,
+          observerOptions
+        );
+
+        observer.observe(heading);
+        observer.observe(paragraph);
+      });
+      function saveResumeData(
+        first_name,
+        last_name,
+        email,
+        country,
+        phone,
+        department,
+        location,
+        interest,
+        resume
+      ) {
+        let existingData = JSON.parse(
+          localStorage.getItem("resumeDataArray") || "[]"
+        );
+        existingData.push({
+          first_name,
+          last_name,
+          email,
+          country,
+          phone,
+          department,
+          location,
+          interest,
+          resume,
+        });
+        localStorage.setItem("resumeDataArray", JSON.stringify(existingData));
+      }
+
+      document
+        .getElementById("resumeForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          const first_name = document.querySelector(
+            '[name="first_name"]'
+          ).value;
+          const last_name = document.querySelector('[name="last_name"]').value;
+          const email = document.querySelector('[name="email"]').value;
+          const country = document.querySelector('[name="country"]').value;
+          const phone = document.querySelector('[name="phone"]').value;
+          const department = document.querySelector(
+            '[name="department"]'
+          ).value;
+          const location = document.querySelector('[name="location"]').value;
+          const interest = document.querySelector('[name="interest"]').value;
+          const resume = document.querySelector('[name="resume"]').value;
+
+          saveResumeData(
+            first_name,
+            last_name,
+            email,
+            country,
+            phone,
+            department,
+            location,
+            interest,
+            resume
+          );
+          this.reset(); // Optional: to clear the form
+        });
+
+      // Note: File inputs cannot be stored directly in localStorage as it only supports strings.
+      // You could store file names or similar identifiers if needed.
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"></script>
+
+    <script src="/JS/index.js"></script>
+    <script src="/JS/navbar.js"></script>
+
+    <script src="/JS/footer.js"></script>
+  </body>
+</html>
