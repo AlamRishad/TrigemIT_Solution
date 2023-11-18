@@ -40,7 +40,7 @@
     <div id="footer-container" class="footer-container"></div>
     <!-- ---------------------------------------------------------------- --  -->
 
-    <script>
+    <!-- <script>
       function saveContactData(name, email, message) {
         let existingData = JSON.parse(
           localStorage.getItem("contactDataArray") || "[]"
@@ -60,7 +60,47 @@
           saveContactData(name, email, message);
           this.reset();
         });
+    </script> -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Select the form element
+        const form = document.getElementById("contactForm");
+
+        // Add an event listener for the 'submit' event
+        form.addEventListener("submit", function (event) {
+          // Prevent the default form submission
+          event.preventDefault();
+
+          // Collect the form data
+          const formData = {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            message: document.getElementById("message").value,
+          };
+
+          // Send the form data to the API
+          fetch("https://localhost:7210/api/Contact/AddContact", {
+            // Replace with your actual API URL
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              console.log("Success:", data);
+              form.reset();
+              // Handle success, maybe clear the form or display a success message
+            })
+            .catch((error) => {
+              console.error("Error:", error);
+              // Handle errors, maybe display an error message to the user
+            });
+        });
+      });
     </script>
+
     <script src="/JS/index.js"></script>
     <script src="/JS/footer.js"></script>
     <script src="/JS/navbar.js"></script>

@@ -129,7 +129,7 @@
             placeholder="What interests you about this department? Please write briefly. We would love to read"
             required
           ></textarea
-          ><input type="file" name="resume" accept="image/*" required />
+          ><input type="file" name="resume" accept="image/*" />
 
           <button type="submit">Submit</button>
         </form>
@@ -200,37 +200,105 @@
         localStorage.setItem("resumeDataArray", JSON.stringify(existingData));
       }
 
-      document
-        .getElementById("resumeForm")
-        .addEventListener("submit", function (event) {
-          event.preventDefault();
-          const first_name = document.querySelector(
-            '[name="first_name"]'
-          ).value;
-          const last_name = document.querySelector('[name="last_name"]').value;
-          const email = document.querySelector('[name="email"]').value;
-          const country = document.querySelector('[name="country"]').value;
-          const phone = document.querySelector('[name="phone"]').value;
-          const department = document.querySelector(
-            '[name="department"]'
-          ).value;
-          const location = document.querySelector('[name="location"]').value;
-          const interest = document.querySelector('[name="interest"]').value;
-          const resume = document.querySelector('[name="resume"]').value;
+      // document
+      //   .getElementById("resumeForm")
+      //   .addEventListener("submit", function (event) {
+      //     event.preventDefault();
+      //     const first_name = document.querySelector(
+      //       '[name="first_name"]'
+      //     ).value;
+      //     const last_name = document.querySelector('[name="last_name"]').value;
+      //     const email = document.querySelector('[name="email"]').value;
+      //     const country = document.querySelector('[name="country"]').value;
+      //     const phone = document.querySelector('[name="phone"]').value;
+      //     const department = document.querySelector(
+      //       '[name="department"]'
+      //     ).value;
+      //     const location = document.querySelector('[name="location"]').value;
+      //     const interest = document.querySelector('[name="interest"]').value;
+      //     const resume = document.querySelector('[name="resume"]').value;
 
-          saveResumeData(
-            first_name,
-            last_name,
-            email,
-            country,
-            phone,
-            department,
-            location,
-            interest,
-            resume
+      //     saveResumeData(
+      //       first_name,
+      //       last_name,
+      //       email,
+      //       country,
+      //       phone,
+      //       department,
+      //       location,
+      //       interest,
+      //       resume
+      //     );
+      //     this.reset(); // Optional: to clear the form
+      //   });
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("resumeForm");
+
+        form.addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          // Create a FormData object, which will be used to send the file
+          const formData = new FormData(form);
+
+          // Append other form data to formData
+          formData.append(
+            "first_name",
+            form.querySelector('[name="first_name"]').value
           );
-          this.reset(); // Optional: to clear the form
+          formData.append(
+            "last_name",
+            form.querySelector('[name="last_name"]').value
+          );
+          formData.append("email", form.querySelector('[name="email"]').value);
+          formData.append(
+            "country",
+            form.querySelector('[name="country"]').value
+          );
+          formData.append("phone", form.querySelector('[name="phone"]').value);
+          formData.append(
+            "department",
+            form.querySelector('[name="department"]').value
+          );
+          formData.append(
+            "location",
+            form.querySelector('[name="location"]').value
+          );
+          formData.append(
+            "interest",
+            form.querySelector('[name="interest"]').value
+          );
+          formData.append(
+            "resume",
+            form.querySelector('[name="resume"]').value
+          );
+          // For file inputs, the file is already included in the FormData object
+
+          // Send the form data to the server using fetch
+          console.log(formData);
+          fetch("https://localhost:7210/api/Resume/AddResume", {
+            // Make sure the URL matches your endpoint
+            method: "POST",
+            body: formData, // FormData will set the appropriate Content-Type header
+          })
+            .then((response) => {
+              if (!response.ok) {
+                throw new Error(
+                  "Network response was not ok: " + response.statusText
+                );
+              }
+              return response.json();
+            })
+            .then((data) => {
+              console.log("Success:", data);
+              alert("Resume submitted successfully!"); // Notify the user
+              form.reset(); // Clear the form
+            })
+            .catch((error) => {
+              console.error("Error:", error);
+              alert("Error submitting resume: " + error.message); // Notify the user
+            });
         });
+      });
 
       // Note: File inputs cannot be stored directly in localStorage as it only supports strings.
       // You could store file names or similar identifiers if needed.

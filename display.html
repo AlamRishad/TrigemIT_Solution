@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Display Contact Data</title>
-
     <link rel="stylesheet" href="/CSS/ContactPage/contact-section.css" />
   </head>
   <body>
@@ -12,25 +11,116 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        const contactInfoDiv = document.getElementById("contactInfo");
-        const contactDataArrayString = localStorage.getItem("contactDataArray"); // Make sure the key matches what you used to save the data
-        const contactDataArray = JSON.parse(contactDataArrayString || "[]");
-
-        if (contactDataArray.length > 0) {
-          contactDataArray.forEach(function (contact, index) {
-            const contactElement = document.createElement("div");
-            contactElement.innerHTML = `
-                        <p><strong>Contact ${index + 1}</strong></p>
-                        <p>Name: ${contact.name}</p>
-                        <p>Email: ${contact.email}</p>
-                        <p>Message: ${contact.message}</p>
-                    `;
-            contactInfoDiv.appendChild(contactElement);
-          });
-        } else {
-          contactInfoDiv.innerHTML = "<p>No contact data found.</p>";
-        }
+        fetchContacts();
       });
+      function fetchContacts() {
+        const contactInfoDiv = document.getElementById("contactInfo");
+        contactInfoDiv.innerHTML = ""; // Clear existing contacts
+
+        fetch("https://localhost:7210/api/Contact/GetAllContact")
+          .then((response) => response.json())
+          .then((data) => {
+            console.log(data);
+            data.forEach((contact) => {
+              console.log(contact);
+              const contactElement = document.createElement("div");
+              contactElement.innerHTML = `
+          <p><strong>Contact ${contact.id}</strong></p>
+          <p id="name-${contact.id}">Name: ${contact.name}</p>
+          <p id="email-${contact.id}">Email: ${contact.email}</p>
+          <p id="message-${contact.id}">Message: ${contact.message}</p>
+          <button onclick='editContact(${JSON.stringify(
+            contact
+          )})'>Edit</button>
+          <button onclick="deleteContact(${contact.id})">Delete</button>
+        `;
+              contactInfoDiv.appendChild(contactElement);
+            });
+          })
+          .catch((error) => {
+            console.error("Error fetching data:", error);
+            contactInfoDiv.innerHTML = "<p>Error loading contact data.</p>";
+          });
+      }
+
+      function editContact(contact) {
+        console.log(
+          `name-${contact.name},${contact.id},${contact.email},${contact.message},`
+        );
+
+        document.getElementById(
+          `name-${contact.id}`
+        ).innerHTML = `Name: <input type="text" id="edit-name-${contact.id}" value="${contact.name}">`;
+        document.getElementById(
+          `email-${contact.id}`
+        ).innerHTML = `Email: <input type="email" id="edit-email-${contact.id}" value="${contact.email}">`;
+        document.getElementById(
+          `message-${contact.id}`
+        ).innerHTML = `Message: <textarea id="edit-message-${contact.id}">${contact.message}</textarea>`;
+        console.log(document.getElementById(`edit-${contact.id}`));
+        document.getElementById(
+          `edit-${contact.id}`
+        ).innerHTML = `<button onclick="confirmEdit(${contact.id})">Confirm</button>`;
+      }
+      function confirmEdit(id) {
+        const updatedName = document.getElementById(`edit-name-${id}`).value;
+        const updatedEmail = document.getElementById(`edit-email-${id}`).value;
+        const updatedMessage = document.getElementById(
+          `edit-message-${id}`
+        ).value;
+
+        const updatedContact = {
+          name: updatedName,
+          email: updatedEmail,
+          message: updatedMessage,
+        };
+
+        fetch(`https://localhost:7210/api/Contact/UpdateContact/${id}`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(updatedContact),
+        })
+          .then((response) => {
+            if (response.ok) {
+              return response.json();
+            } else {
+              throw new Error("Something went wrong");
+            }
+          })
+          .then((data) => {
+            console.log("Update successful", data);
+            fetchContacts(); // Refresh the contact list
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+          });
+      }
+
+      function deleteContact(contactId) {
+        if (!confirm("Are you sure you want to delete this contact?")) {
+          return;
+        }
+
+        fetch(`https://localhost:7210/api/Contact/DeleteContact/${contactId}`, {
+          method: "DELETE",
+        })
+          .then((response) => {
+            if (response.ok) {
+              return response.json();
+            } else {
+              throw new Error("Something went wrong");
+            }
+          })
+          .then((data) => {
+            console.log("Delete successful", data);
+            fetchContacts(); // Refresh the contact list
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+          });
+      }
     </script>
   </body>
 </html>
