@@ -26,7 +26,7 @@
           through experiencing different cultures while dedicatedly working
           together as a team towards a common vision and goals
         </p>
-        <a href="link_to_career_page.html" class="join-btn">JOIN REVE FAMILY</a>
+        <a href="contact.html" class="join-btn">JOIN TRIGEM FAMILY</a>
       </div>
     </section>
     <section class="career-section2">
@@ -98,7 +98,7 @@
           We'll contact you if your qualification match with the requirements
         </p>
 
-        <form id="resumeForm" action="/submit_resume" method="post">
+        <form id="resumeForm" method="post">
           <input
             type="text"
             name="first_name"
@@ -128,8 +128,8 @@
             name="interest"
             placeholder="What interests you about this department? Please write briefly. We would love to read"
             required
-          ></textarea
-          ><input type="file" name="resume" accept="image/*" />
+          ></textarea>
+          <!-- <input type="text" name="resume" /> -->
 
           <button type="submit">Submit</button>
         </form>
@@ -172,33 +172,33 @@
         observer.observe(heading);
         observer.observe(paragraph);
       });
-      function saveResumeData(
-        first_name,
-        last_name,
-        email,
-        country,
-        phone,
-        department,
-        location,
-        interest,
-        resume
-      ) {
-        let existingData = JSON.parse(
-          localStorage.getItem("resumeDataArray") || "[]"
-        );
-        existingData.push({
-          first_name,
-          last_name,
-          email,
-          country,
-          phone,
-          department,
-          location,
-          interest,
-          resume,
-        });
-        localStorage.setItem("resumeDataArray", JSON.stringify(existingData));
-      }
+      // function saveResumeData(
+      //   first_name,
+      //   last_name,
+      //   email,
+      //   country,
+      //   phone,
+      //   department,
+      //   location,
+      //   interest,
+      //   resume
+      // ) {
+      //   let existingData = JSON.parse(
+      //     localStorage.getItem("resumeDataArray") || "[]"
+      //   );
+      //   existingData.push({
+      //     first_name,
+      //     last_name,
+      //     email,
+      //     country,
+      //     phone,
+      //     department,
+      //     location,
+      //     interest,
+      //     resume,
+      //   });
+      //   localStorage.setItem("resumeDataArray", JSON.stringify(existingData));
+      // }
 
       // document
       //   .getElementById("resumeForm")
@@ -237,48 +237,25 @@
         form.addEventListener("submit", function (event) {
           event.preventDefault();
 
-          // Create a FormData object, which will be used to send the file
-          const formData = new FormData(form);
+          const resumeData = {
+            firstName: form.querySelector('[name="first_name"]').value,
+            lastName: form.querySelector('[name="last_name"]').value,
+            email: form.querySelector('[name="email"]').value,
+            country: form.querySelector('[name="country"]').value,
+            phone: form.querySelector('[name="phone"]').value,
+            department: form.querySelector('[name="department"]').value,
+            location: form.querySelector('[name="location"]').value,
+            interest: form.querySelector('[name="interest"]').value,
+            resumeFile: "hello",
+          };
 
-          // Append other form data to formData
-          formData.append(
-            "first_name",
-            form.querySelector('[name="first_name"]').value
-          );
-          formData.append(
-            "last_name",
-            form.querySelector('[name="last_name"]').value
-          );
-          formData.append("email", form.querySelector('[name="email"]').value);
-          formData.append(
-            "country",
-            form.querySelector('[name="country"]').value
-          );
-          formData.append("phone", form.querySelector('[name="phone"]').value);
-          formData.append(
-            "department",
-            form.querySelector('[name="department"]').value
-          );
-          formData.append(
-            "location",
-            form.querySelector('[name="location"]').value
-          );
-          formData.append(
-            "interest",
-            form.querySelector('[name="interest"]').value
-          );
-          formData.append(
-            "resume",
-            form.querySelector('[name="resume"]').value
-          );
-          // For file inputs, the file is already included in the FormData object
-
-          // Send the form data to the server using fetch
-          console.log(formData);
+          console.log(resumeData);
           fetch("https://localhost:7210/api/Resume/AddResume", {
-            // Make sure the URL matches your endpoint
             method: "POST",
-            body: formData, // FormData will set the appropriate Content-Type header
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(resumeData),
           })
             .then((response) => {
               if (!response.ok) {
@@ -290,18 +267,15 @@
             })
             .then((data) => {
               console.log("Success:", data);
-              alert("Resume submitted successfully!"); // Notify the user
-              form.reset(); // Clear the form
+              alert("Resume submitted successfully!");
+              form.reset();
             })
             .catch((error) => {
               console.error("Error:", error);
-              alert("Error submitting resume: " + error.message); // Notify the user
+              alert("Error submitting resume: " + error.message);
             });
         });
       });
-
-      // Note: File inputs cannot be stored directly in localStorage as it only supports strings.
-      // You could store file names or similar identifiers if needed.
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"></script>
 

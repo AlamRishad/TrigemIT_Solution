@@ -23,18 +23,29 @@
             console.log(data);
             data.forEach((contact) => {
               console.log(contact);
-              const contactElement = document.createElement("div");
-              contactElement.innerHTML = `
-          <p><strong>Contact ${contact.id}</strong></p>
-          <p id="name-${contact.id}">Name: ${contact.name}</p>
-          <p id="email-${contact.id}">Email: ${contact.email}</p>
-          <p id="message-${contact.id}">Message: ${contact.message}</p>
-          <button onclick='editContact(${JSON.stringify(
-            contact
-          )})'>Edit</button>
-          <button onclick="deleteContact(${contact.id})">Delete</button>
+              const contactRow = document.createElement("div");
+              contactRow.className = "contact-row";
+              contactRow.innerHTML = `
+          <span class="contact-detail"><strong>ID:</strong> ${contact.id}</span>
+          <span class="contact-detail" id="name-${
+            contact.id
+          }"><strong>Name:</strong> ${contact.name}</span>
+          <span class="contact-detail" id="email-${
+            contact.id
+          }"><strong>Email:</strong> ${contact.email}</span>
+          <span class="contact-detail" id="message-${
+            contact.id
+          }"><strong>Message:</strong> ${contact.message}</span>
+          <span class="contact-actions">
+            <button id="edit-${contact.id}" onclick='editContact(${
+                contact.id
+              }, ${JSON.stringify(contact.name)}, ${JSON.stringify(
+                contact.email
+              )}, ${JSON.stringify(contact.message)})'>Edit</button>
+            <button onclick="deleteContact(${contact.id})">Delete</button>
+          </span>
         `;
-              contactInfoDiv.appendChild(contactElement);
+              contactInfoDiv.appendChild(contactRow);
             });
           })
           .catch((error) => {
@@ -43,38 +54,39 @@
           });
       }
 
-      function editContact(contact) {
-        console.log(
-          `name-${contact.name},${contact.id},${contact.email},${contact.message},`
-        );
+      function editContact(id, name, email, message) {
+        console.log(`name-${name},${id},${email},${message},`);
 
         document.getElementById(
-          `name-${contact.id}`
-        ).innerHTML = `Name: <input type="text" id="edit-name-${contact.id}" value="${contact.name}">`;
+          `name-${id}`
+        ).innerHTML = `Name: <input type="text" id="edit-name-${id}" value="${name}">`;
+        console.log(document.getElementById(`name-${id}`));
         document.getElementById(
-          `email-${contact.id}`
-        ).innerHTML = `Email: <input type="email" id="edit-email-${contact.id}" value="${contact.email}">`;
+          `email-${id}`
+        ).innerHTML = `Email: <input type="email" id="edit-email-${id}" value="${email}">`;
+        console.log(document.getElementById(`email-${id}`));
         document.getElementById(
-          `message-${contact.id}`
-        ).innerHTML = `Message: <textarea id="edit-message-${contact.id}">${contact.message}</textarea>`;
-        console.log(document.getElementById(`edit-${contact.id}`));
+          `message-${id}`
+        ).innerHTML = `Message: <textarea id="edit-message-${id}">${message}</textarea>`;
+        console.log(document.getElementById(`message-${id}`));
         document.getElementById(
-          `edit-${contact.id}`
-        ).innerHTML = `<button onclick="confirmEdit(${contact.id})">Confirm</button>`;
+          `edit-${id}`
+        ).innerHTML = `<button id="confirm-${id}" onclick="confirmEdit(${id}, '${name}', '${email}', '${message}')">Confirm</button>
+`;
+        console.log(document.getElementById(`edit-${id}`));
       }
-      function confirmEdit(id) {
+      function confirmEdit(id, name, email, message) {
+        console.log(id, message, email, name);
         const updatedName = document.getElementById(`edit-name-${id}`).value;
         const updatedEmail = document.getElementById(`edit-email-${id}`).value;
         const updatedMessage = document.getElementById(
           `edit-message-${id}`
         ).value;
-
         const updatedContact = {
           name: updatedName,
           email: updatedEmail,
           message: updatedMessage,
         };
-
         fetch(`https://localhost:7210/api/Contact/UpdateContact/${id}`, {
           method: "PUT",
           headers: {
