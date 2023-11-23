@@ -1,0 +1,197 @@
+.main-container2 {
+  background-image: url("/soccer-green-field_225004-1137.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 75vh;
+  width: 50vw;
+  display: flex;
+}
+.main-container3 {
+  background-image: url("/night-cricket-stadium-illustration-vector-600nw-2160100275.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 75vh;
+  width: 50vw;
+  display: flex;
+}
+.football-image {
+  width: 5%;
+}
+.football-image img {
+  width: 25px;
+  height: 25px;
+  object-fit: cover;
+
+  transform: translate(-50%, -50%);
+  position: absolute;
+  left: 80vw;
+  margin-top: 53.5vh;
+  margin-bottom: 1vw;
+}
+
+.football-player img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin-left: 36.5vw;
+  margin-top: 52.5vh;
+  transform: translate(-50%, -50%);
+}
+.football-player2 img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin-left: -30vw;
+  margin-top: 52.5vh;
+  transform: translate(-50%, -50%);
+}
+.football-player3 img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin-left: -14vw;
+  margin-top: 18vh;
+  transform: translate(-50%, -50%);
+}
+/* -------------------------------------------------------------  */
+.event-football {
+  display: flex;
+  width: 90%;
+  margin-left: 5%;
+}
+
+.event-creation-section {
+  background-color: #f5f5fa;
+  text-align: center;
+  width: 100%;
+  padding: 50px 0;
+  font-family: "Arial", sans-serif;
+}
+
+.event-creation-section h1 {
+  color: #4a4a4a;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.event-creation-section button {
+  background-color: #6c5ce7;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.event-creation-section button:hover {
+  background-color: #5a4fcf;
+}
+
+.event-announcement {
+  background-color: #f5f5fa;
+  padding: 50px 20px;
+  font-family: "Arial", sans-serif;
+}
+
+.event-announcement h1 {
+  text-align: center;
+  color: #333;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.event-announcement p {
+  color: #666;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.event-announcement .p1 p {
+  text-align: center;
+}
+
+.event-announcement .event-date {
+  color: #888;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.event-announcement .event-details {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: auto;
+  width: 35%;
+  transform: translateX(-30%);
+  opacity: 0;
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+.event-details.in-view {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.event-announcement .event-details h2 {
+  color: #4a4a4a;
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.event-announcement .event-details p {
+  color: #4a4a4a;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.event-announcement .event-details ul {
+  list-style: inside;
+  padding-left: 0;
+}
+
+.event-announcement .event-details ul li {
+  margin-bottom: 10px;
+}
+
+.event-announcement .event-details2 {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: auto;
+  width: 35%;
+  transform: translateX(20%);
+  opacity: 0;
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+.event-details2.in-view {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.event-announcement .event-details2 h2 {
+  color: #4a4a4a;
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.event-announcement .event-details2 p {
+  color: #4a4a4a;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.event-announcement .event-details2 ul {
+  list-style: inside;
+  padding-left: 0;
+}
+
+.event-announcement .event-details2 ul li {
+  margin-bottom: 10px;
+}

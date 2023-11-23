@@ -79,7 +79,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.getElementById("image6").src = imageSources.image6;
 
-  // Start the rotate and scale animations
   const rotatingElement = document.getElementById("rotatingBackground");
   rotateBackground(rotatingElement, 0.5);
 

@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
               <li href="#">News</li>
               <li href="#">Beyond Business</li>
               <li href="#">Testimonials</li>
-              <li href="#">Event List</li>
+              <li id ="event">Event List</li>
               <li href="#">Awards & Certifications</li>
               <li href="#">Gallery</li>
               <li href="#">Careers</li>
@@ -123,6 +123,8 @@ function updateActiveLink() {
       .classList.add("active");
   } else if (currentPage === "trigemSbc.html") {
     document.querySelector(".navbar .dropbtn").classList.add("active");
+  } else if (currentPage === "event.html") {
+    document.querySelector(".navbar .dropbtn2").classList.add("active");
   }
 }
 
@@ -133,6 +135,17 @@ document.addEventListener("DOMContentLoaded", function () {
   if (trigemSbcElement) {
     trigemSbcElement.addEventListener("click", function () {
       window.location.href = "trigemSbc.html";
+    });
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  updateActiveLink();
+
+  var trigemSbcElement = document.getElementById("event");
+  if (trigemSbcElement) {
+    trigemSbcElement.addEventListener("click", function () {
+      window.location.href = "event.html";
     });
   }
 });
