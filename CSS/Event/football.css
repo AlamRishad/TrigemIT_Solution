@@ -1,5 +1,5 @@
 .main-container2 {
-  background-image: url("/soccer-green-field_225004-1137.jpg");
+  background-image: url("/Images/soccer-green-field_225004-1137.jpg");
   background-size: cover;
   background-position: center;
   height: 75vh;
@@ -7,7 +7,7 @@
   display: flex;
 }
 .main-container3 {
-  background-image: url("/night-cricket-stadium-illustration-vector-600nw-2160100275.jpg");
+  background-image: url("/Images/night-cricket-stadium-illustration-vector-600nw-2160100275.jpg");
   background-size: cover;
   background-position: center;
   height: 75vh;
@@ -35,6 +35,7 @@
   object-fit: cover;
   margin-left: 36.5vw;
   margin-top: 52.5vh;
+
   transform: translate(-50%, -50%);
 }
 .football-player2 img {
@@ -51,7 +52,49 @@
   object-fit: cover;
   margin-left: -14vw;
   margin-top: 18vh;
+  margin-right: 1vw;
   transform: translate(-50%, -50%);
+}
+
+.football-player4 img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin-left: 2vw;
+  margin-top: 38.5vh;
+  transform: translate(-50%, -50%);
+}
+.football-player5 img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin-left: -9.5vw;
+  margin-top: 36.5vh;
+  transform: translate(-50%, -50%);
+}
+.football-player6 img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+
+  margin-left: -43vw;
+  margin-top: 38.5vh;
+  transform: translate(-50%, -50%);
+}
+.score-card {
+  /* height: 3vh;
+  width: 5vw; */
+  background-color: rgb(42, 108, 240);
+  color: white;
+  /* padding-top: 1vh;
+  padding-left: 2vw;
+  font-size: 12px;
+  margin-top: 10px; */
+}
+.score-container {
+  position: relative;
+  /* margin-left: 2vw; */
+  display: flex;
 }
 /* -------------------------------------------------------------  */
 .event-football {
@@ -61,7 +104,10 @@
 }
 
 .event-creation-section {
-  background-color: #f5f5fa;
+  position: relative;
+  background-image: url("/Images/BMImages_00014490001_SuperRes.jpg");
+  background-size: cover;
+  background-position: center;
   text-align: center;
   width: 100%;
   padding: 50px 0;
@@ -69,7 +115,7 @@
 }
 
 .event-creation-section h1 {
-  color: #4a4a4a;
+  color: white;
   font-size: 36px;
   margin-bottom: 20px;
 }
